@@ -5,7 +5,7 @@
 ### Assignment Summary
 This project is about creating a website for small events where users can make, share, and buy tickets using Stripe for payment.
 
-### Assignment Deliverables
+### Assignment Deliverables by the end of the Project
 1. **Website Development**: A fully functional website that allows:
    - Creation of event tickets
    - Sharing of event links
