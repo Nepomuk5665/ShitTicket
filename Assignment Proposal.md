@@ -23,5 +23,5 @@ This project is about creating a website for small events where users can make, 
 ### Main Stakeholders
 - **Nepomuk** (Backend Developer)
 - **Inaam** (Frontend Developer)
-- **Lehrmeister** (Teacher)
-- **Devlin** (Advisor)
+- **Lehrmeister** 
+- **Devlin** (Teacher)
