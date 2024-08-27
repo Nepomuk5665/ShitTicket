@@ -1,4 +1,4 @@
-# Event Ticketing System Project
+# Event Ticketing System Project - ShitTicket
 
 ## Assignment Proposal
 
