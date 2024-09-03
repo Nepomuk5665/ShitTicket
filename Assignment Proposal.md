@@ -11,7 +11,7 @@ This project is about creating a website for small events where users can make, 
    - Sharing of event links
    - Purchase of tickets through Stripe integration
    - Save data to database based on Firebase
-2. **IPERKA Documentation**:
+2. **IPERKA Documentation**
      
 ### Key Dates
 - **Assignment Proposal Draft Submission**: September 3, 2024
