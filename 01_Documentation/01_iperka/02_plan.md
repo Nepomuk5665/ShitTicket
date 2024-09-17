@@ -16,7 +16,7 @@
 
 
 ## Resource plan
-* We set the project deadline for **29 October 2024** and established a timeline from **12 September 2024** onward.
+* @tbz-neil-devlin set the project deadline for **29 October 2024** and established a timeline from **27 August 2024** onward.
 * Based on the schedule in **ShitTicket/01_Documentation/03_timeTable.csv**, we allocated work across the team (Nepomuk and Inaam) based on availability in the mornings, afternoons, and evenings.
   * **N = Nepomuk**
   * **I = Inaam**
