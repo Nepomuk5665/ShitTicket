@@ -12,7 +12,8 @@
 * We also considered how to integrate Firebase for user authentication and ticket data storage, focusing on how tickets would be shared and managed between users and the event organizers.
 * Our brainstorming included drawing out the data structure and workflow, which we sketched in **Miro**.
   
-![Analyze][miro]
+<img width="651" alt="Screenshot 2024-09-17 at 15 31 41" src="https://github.com/user-attachments/assets/0b61c4f7-ca81-467b-b25c-bfb20c14f99e">
+
 
 ## Resource plan
 * We set the project deadline for **29 October 2024** and established a timeline from **12 September 2024** onward.
@@ -27,7 +28,7 @@
 | 13.09.2024|    N    |           |    I    |
 | ...       |    N    |           |    N+I  |
 
-![Time Table][timetable]
+
 
 ## Using GitHub for task management
 * We decided to manage the project tasks and milestones through GitHub's project management tools.
@@ -46,7 +47,7 @@ We created six major milestones for the project:
 5. **Testing and debugging**
 6. **Final deployment on Hostinger**
 
-![Milestones][figma]
+
 
 ## Task list
 * We created a list of tasks and assigned them based on their relevance to each milestone.
@@ -57,7 +58,7 @@ We created six major milestones for the project:
   * Integrate Stripe for secure payments.
   * Develop ticket-creation interface (based on the Figma design).
 
-![Tasklist][tasklist]
+
 
 ## Creating a Gantt chart
 We used GitHub Projects to visualize the Gantt chart, mapping out each task over time to ensure we're staying on track with our available hours and milestones.
@@ -66,7 +67,7 @@ We used GitHub Projects to visualize the Gantt chart, mapping out each task over
 * We track our progress by comparing **Actual Effort** to the **Estimated Effort** in GitHub's issue tracker.
 * As new tasks arise, we add them to the task list and update the due dates accordingly.
 
-![Progress][progress]
+
 
 ## Visuals
 * **Miro board**: Contains the data structure and workflow sketch.
