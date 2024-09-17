@@ -23,7 +23,7 @@
 * We realized that by targeting niche markets like small parties or local events, we wouldn't be competing directly with the big names, so they’re unlikely to push into our space.
 
 ### Technical Requirements
-* We researched what tools and platforms we would need to build the site. We chose **Stripe** as our payment gateway because it’s easy to integrate, has low fees, and works globally. We also needed web hosting and a way to generate ticket links quickly for users.
+* We researched what tools and platforms we would need to build the site. We chose **Stripe** as our payment gateway because it’s easy to integrate, has low fees, and works globally. We will use **Hostinger** for hosting and domain services. For development, we will use **VS Code** and **Firebase** to build and manage the website backend.
 
 ## What type of information did we gather
 * Competitors
@@ -31,7 +31,7 @@
 * Business model
   * We decided that taking a 10% fee would keep things simple and affordable for our users, without adding extra costs.
 * Tools needed
-  * Web hosting, payment integration via **Stripe**, and a simple ticket-link generator were identified as the main tools we would need.
+  * Web hosting with **Hostinger**, payment integration via **Stripe**, and a simple ticket-link generator using **Firebase** were identified as the main tools we would need.
 
 ## Goals
 * Build a website that lets people easily create and share ticket links.
@@ -46,17 +46,17 @@
 ## Tools needed
 * **GitHub**
   * For code management and collaboration.
-* **Web hosting**
-  * We researched several hosting options and chose one that was affordable and scalable for future growth.
+* **Hostinger**
+  * We will use Hostinger to host the website and buy the domain.
 * **Stripe**
   * We chose Stripe for payment integration because it’s easy to implement and has low fees.
-* **Domain**
-  * We bought the domain **shitticket.ch** to make the project feel more professional and legit.
-* **Web framework**
-  * We used a framework that allowed us to quickly build and deploy the site.
+* **VS Code**
+  * We are using Visual Studio Code for coding and development.
+* **Firebase**
+  * We will use Firebase to manage the backend and handle database connections for the website.
   
 ## References
 * “Eventbrite fees.” Eventbrite, https://www.eventbrite.com/fees. Accessed 17 September 2024.
 * “What is Ticketcorner?” Ticketcorner, https://www.ticketcorner.ch/. Accessed 17 September 2024.
 * “Stripe Documentation.” Stripe, https://stripe.com/docs. Accessed 17 September 2024.
-* “Web hosting options for small businesses.” HostingAdvice, https://www.hostingadvice.com/. Accessed 17 September 2024.
+* “Hostinger Hosting Options.” Hostinger, https://www.hostinger.com/. Accessed 17 September 2024.
