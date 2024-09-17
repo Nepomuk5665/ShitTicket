@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create SHITTICKET</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+margin: 20px;
+}
+.container {
+max-width: 400px;
+margin: auto;
+}
+label {
+display: block;
+margin: 10px 0 5px;
+}
+input[type="text"], input[type="email"], textarea {
+width: 100%;
+padding: 8px;
+margin-bottom: 10px;
+border: 1px solid #111010;
+border-radius: 4px;
+}
+button {
+padding: 10px 15px;
+background-color: #36a3da;
+color: rgb(255, 255, 255);
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+button:hover {
+background-color: #83afe1;
+}
+</style>
+</head>
+<body style="background-color: burlywood;">
+
+<div class="container">
+<h1>Create SHITTICKET</h1>
+<form>
+<label for="Event name">What is the name of the event?:</label>
+<input type="text" id="Event name" name="Event name" required>
+
+<label for="place">Where will it take place?:</label>
+<input type="text" id="place" name="place" required>
+
+<label for="entrance fee">How much is the entrance fee?</label>
+<input type="number" id="entrance fee" name="entrance fee" required></input>
+
+<label for="people">Whats the maximum people you want to come?:</label>
+<input type="number" id="people" name="people" required>
+
+<br><br>
+<button href="index2.html">Create</button>
+
+
+</form>
+</div>
+
+</body>
+</html>
