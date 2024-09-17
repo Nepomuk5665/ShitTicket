@@ -6,4 +6,4 @@ We also explored how other websites charge fees for selling tickets. Most platfo
 
 The name **shitticket.ch** also came from us wanting to be memorable. It's funny, a bit edgy, and makes people laugh, so it sticks in their heads. It fits with our goal of making event organizing more casual and less corporate-feeling. 
 
-We got all this information by researching competitors, reading articles about the ticket industry, and talking to people who organize smaller events to get real-world feedback. With this knowledge, we knew our idea had potential.
+
