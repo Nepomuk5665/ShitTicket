@@ -1,0 +1,55 @@
+body {
+    background-color: rgb(22, 20, 26);
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding-top: 50px;
+}
+
+h1 {
+    color: #9eb2f1;
+    animation: fadeIn 2s ease-out;
+}
+
+h2 {
+    color: #ffffff;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #5188e8;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 18px;
+    text-transform: uppercase;
+    outline: none;
+    animation: popIn 0.5s ease-out;
+}
+
+button:hover {
+    background-color: #80a6e7;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
