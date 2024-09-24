@@ -58,6 +58,9 @@ We created six major milestones for the project:
   * Integrate Stripe for secure payments.
   * Develop ticket-creation interface (based on the Figma design).
 
+For the real-time task breakdown, refer to our [timetable](https://github.com/Nepomuk5665/ShitTicket/blob/main/01_Documentation/03_timeTable.csv).
+
+
 
 
 ## Creating a Gantt chart
