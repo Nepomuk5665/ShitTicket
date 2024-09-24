@@ -61,7 +61,7 @@ We created six major milestones for the project:
 *GitHub to do list:
 ![GitHub Issues To-Do List](https://github.com/user-attachments/assets/1a012d85-7026-44cf-9009-38760136abc3)
 *Microsoft to do list:
-![Microsoft To-Do List](<img width="1726" alt="Screenshot 2024-09-24 at 22 34 15" src="https://github.com/user-attachments/assets/9edb3ae8-4fb4-4060-89e4-fb49ea28569b">)
+![Microsoft To-Do List](https://github.com/user-attachments/assets/9edb3ae8-4fb4-4060-89e4-fb49ea28569b)
 
 ## Creating a Gantt chart
 We used GitHub Projects to visualize the Gantt chart, mapping out each task over time to ensure we're staying on track with our available hours and milestones.
