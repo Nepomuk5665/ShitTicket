@@ -57,6 +57,10 @@ We created six major milestones for the project:
 * Microsoft to do list:
 ![Microsoft To-Do List](https://github.com/user-attachments/assets/9edb3ae8-4fb4-4060-89e4-fb49ea28569b)
 
+### Task Management
+* Weekly meetings to review and update the task list, ensuring mutual accountability and progress.
+
+
 ### Creating a Gantt chart
 We used GitHub Projects to visualize the Gantt chart, mapping out each task over time to ensure we're staying on track with our available hours and milestones.
 
