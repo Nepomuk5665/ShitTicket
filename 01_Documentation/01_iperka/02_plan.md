@@ -60,6 +60,7 @@ We created six major milestones for the project:
 
 
 
+
 ## Creating a Gantt chart
 We used GitHub Projects to visualize the Gantt chart, mapping out each task over time to ensure we're staying on track with our available hours and milestones.
 

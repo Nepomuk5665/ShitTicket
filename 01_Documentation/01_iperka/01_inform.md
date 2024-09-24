@@ -1,62 +1,47 @@
-# How we gathered the information for this project
+# How We Gathered Information for Shitticket.ch
 
-## How did we get the idea
-* The idea behind **shitticket.ch** came from realizing that selling tickets for small events is often complicated or expensive. We wanted to create a simple way for people to sell tickets for things like parties, small events, or niche gatherings. We figured that a name like "shitticket" would be memorable and get people talking, making it easier to spread the word.
+## Concept Origin
+The concept for **shitticket.ch** emerged from the challenges and costs associated with selling tickets for small-scale events. Our aim was to simplify the process, targeting parties, small events, or niche gatherings. We chose the name "shitticket" for its memorability and potential for word-of-mouth promotion.
 
-## What type of information did we need
-* Competitors
-  * We needed to know what competitors like Ticketcorner and Eventbrite are doing and how much they charge.
-* Business model
-  * We needed to figure out how to make money with a low-cost, simple solution.
-* Niche market
-  * We wanted to understand if there was a gap in the market for small events and parties that other big companies ignore.
-* Technical requirements
-  * We had to figure out what tools we would need to build the website, such as hosting services, payment integration, and how to generate ticket links.
+## Information Needs
+* **Competitors:** Knowledge of offerings and fees from competitors like Ticketcorner and Eventbrite.
+* **Business Model:** Strategies to monetize our service effectively while maintaining low costs.
+* **Niche Market:** Identifying gaps in the market that larger companies might overlook.
+* **Technical Requirements:** Determining the necessary tools for website development and ticket management.
 
-## Gathering information
+## Information Gathering Techniques
 ### Market Research
-* We looked at other ticket-selling platforms like Ticketcorner, Eventbrite, and Ticketmaster. We found that these platforms mostly focus on big events and charge high fees (sometimes 10-15%). This confirmed our idea that there’s a space for a more affordable, small-scale ticketing solution.
-* We talked to friends who have organized events to learn about the problems they face when selling tickets. Their feedback showed that there’s a need for a tool that’s quick, easy, and doesn’t require too much setup.
+* We analyzed major ticket-selling platforms (Ticketcorner, Eventbrite, Ticketmaster) to understand their focus and fee structures, confirming a market opportunity for more affordable, small-scale ticketing solutions.
+* Discussions with event organizers provided insights into the challenges faced, highlighting the demand for a straightforward ticketing tool.
 
-### Business Model
-* We researched how other platforms make money and decided to keep it simple: we would take a 10% cut of the ticket price with no hidden fees. This is less than most big platforms and makes it affordable for smaller events.
-* We realized that by targeting niche markets like small parties or local events, we wouldn't be competing directly with the big names, so they’re unlikely to push into our space.
+### Business Model Exploration
+* We studied monetization strategies of existing platforms and chose to adopt a transparent fee model—taking a 10% cut on ticket sales without hidden charges.
+* Targeting niche markets like local events and small parties allowed us to avoid direct competition with major players.
 
-### Technical Requirements
-* We researched what tools and platforms we would need to build the site. We chose **Stripe** as our payment gateway because it’s easy to integrate, has low fees, and works globally. We will use **Hostinger** for hosting and domain services. For development, we will use **VS Code** and **Firebase** to build and manage the website backend.
+### Technical Planning
+* After evaluating various tools, we selected **Stripe** for payment processing due to its ease of integration, low transaction fees, and global accessibility.
+* **Hostinger** was chosen for web hosting and domain services, while **VS Code** and **Firebase** were picked for website development and backend management.
 
-## What type of information did we gather
-* Competitors
-  * We found that big competitors focus on large events and charge high fees. This leaves a gap for small, affordable solutions.
-* Business model
-  * We decided that taking a 10% fee would keep things simple and affordable for our users, without adding extra costs.
-* Tools needed
-  * Web hosting with **Hostinger**, payment integration via **Stripe**, and a simple ticket-link generator using **Firebase** were identified as the main tools we would need.
+## Information Collected
+* **Competitors:** Larger platforms cater predominantly to big events with substantial fees, leaving room for a small-scale, cost-effective solution.
+* **Business Model:** Opting for a simple fee structure (10% per ticket) ensures affordability and transparency.
+* **Tools:** Identified essential tools for the project: Hostinger for hosting, Stripe for payments, and Firebase for backend operations.
 
-## Goals
-* Build a website that lets people easily create and share ticket links.
-  * Measured by having a functional website where users can sell tickets by the project deadline: **29 October 2024**.
-  * Achievable and realistic for our skillset and resources.
-  * Timely: The site should be operational by the end of the project deadline.
-* Test the idea by launching a few small events and getting user feedback.
-  * Measured by the number of tickets sold and user satisfaction.
-  * Achievable with a small budget and network of event organizers.
-  * Timely: Feedback should be collected before expanding the platform.
+## Project Goals
+* **Website Development:** To build a user-friendly platform by **29 October 2024** for creating and sharing event tickets.
+* **Market Validation:** To launch with a few small events, gathering user feedback to gauge satisfaction and demand.
 
-## Tools needed
-* **GitHub**
-  * For code management and collaboration.
-* **Hostinger**
-  * We will use Hostinger to host the website and buy the domain.
-* **Stripe**
-  * We chose Stripe for payment integration because it’s easy to implement and has low fees.
-* **VS Code**
-  * We are using Visual Studio Code for coding and development.
-* **Firebase**
-  * We will use Firebase to manage the backend and handle database connections for the website.
-  
-## References
-* “Eventbrite fees.” Eventbrite, https://www.eventbrite.com/fees. Accessed 17 September 2024.
-* “What is Ticketcorner?” Ticketcorner, https://www.ticketcorner.ch/. Accessed 17 September 2024.
-* “Stripe Documentation.” Stripe, https://stripe.com/docs. Accessed 17 September 2024.
-* “Hostinger Hosting Options.” Hostinger, https://www.hostinger.com/. Accessed 17 September 2024.
+## Tools for Project Execution
+* **GitHub:** For source code management and documentation, ensuring collaboration and version control.
+* **Hostinger:** Hosting and domain acquisition.
+* **Stripe:** For streamlined payment integrations.
+* **VS Code:** For development.
+* **Firebase:** For database management and backend services.
+
+
+
+---
+
+**Additional Requirements:**
+* **Repository Management:** Ensure to create a GitHub repository named `m431_ap24a_website` and invite `tbz-neil-devlin` as a member to comply with project submission guidelines.
+* **Assignment Deliverables:** By project end, you need a fully operational website supporting ticket creation, sharing, purchasing (via Stripe), and data management (using Firebase), along with complete IPERKA documentation.
