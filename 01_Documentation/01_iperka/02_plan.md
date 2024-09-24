@@ -74,4 +74,4 @@ We used GitHub Projects to visualize the Gantt chart, mapping out each task over
 * [Miro Data Structure](https://miro.com/welcomeonboard/ZEMyQjFUWDFOVUlWSjMxNEYxZTBOOWlFd2lKdDMzUnFJYkprNTczVDhqb0liUTdyTkJ4UWJEOXhYNWMyek80R3wzNDU4NzY0NTM2MDY0OTU4MDUwfDI=?share_link_id=424129458285)
 * [Figma Design](https://www.figma.com/design/XdHtJ34A3BiF542R21bNlt/Shit-Ticket?node-id=0-1&t=pnqqpHKTTkCcaOoA-1)
 * [GitHub Issues](https://github.com/Nepomuk5665/ShitTicket/issues)
-* [Microsoft To-Do Invitation](https://to-do.microsoft.com/sharing?InvitationToken=PaG7OZIu93K5ROSlIhS0cgVUU-VKNANFXDvQQQD6szTErVvFU05UM1p-rPsyDAyVU)
+* [Microsoft To-Do](https://to-do.microsoft.com/sharing?InvitationToken=PaG7OZIu93K5ROSlIhS0cgVUU-VKNANFXDvQQQD6szTErVvFU05UM1p-rPsyDAyVU)
