@@ -58,9 +58,9 @@ We created six major milestones for the project:
   * Set up Firebase AppCheck for secure data handling.
   * Integrate Stripe for secure payments.
   * Develop ticket-creation interface (based on the Figma design).
-*GitHub to do list:
+* GitHub to do list:
 ![GitHub Issues To-Do List](https://github.com/user-attachments/assets/1a012d85-7026-44cf-9009-38760136abc3)
-*Microsoft to do list:
+* Microsoft to do list:
 ![Microsoft To-Do List](https://github.com/user-attachments/assets/9edb3ae8-4fb4-4060-89e4-fb49ea28569b)
 
 ## Creating a Gantt chart
