@@ -17,7 +17,7 @@
 
 ## Resource Plan
 * @tbz-neil-devlin set the project deadline for **29 October 2024** and established a timeline from **27 August 2024** onward.
-* Based on the schedule in **ShitTicket/01_Documentation/03_timeTable.csv**, we allocated work across the team (Nepomuk and Inaam) based on availability in the mornings, afternoons, and evenings.
+* Based on the schedule in **[ShitTicket/01_Documentation/03_timeTable.csv](https://github.com/Nepomuk5665/ShitTicket/blob/main/01_Documentation/03_timeTable.csv)**, we allocated work across the team (Nepomuk and Inaam) based on availability in the mornings, afternoons, and evenings.
   * **N = Nepomuk**
   * **I = Inaam**
 * We calculated the available hours and made sure they align with the work estimates.
@@ -27,6 +27,7 @@
 | 12.09.2024|    N    |           |    N+I  |
 | 13.09.2024|    N    |           |    I    |
 | ...       |    N    |           |    N+I  |
+
 
 
 
