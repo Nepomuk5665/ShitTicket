@@ -38,8 +38,7 @@ The concept for **shitticket.ch** emerged from the challenges and costs associat
 * **VS Code:** For development.
 * **Firebase:** For database management and backend services.
 
-## References
-* Provided links to relevant resources and documentation for deeper understanding and verification.
+
 
 ---
 
