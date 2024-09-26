@@ -1,6 +1,6 @@
 # Documentation
 
-## [iperka](https://github.com/Nepomuk5665/ShitTicket/tree/main/01_Documentation/01_iperka)
+## [IPERKA](https://github.com/Nepomuk5665/ShitTicket/tree/main/01_Documentation/01_iperka)
 - [01_inform.md](https://github.com/Nepomuk5665/ShitTicket/blob/main/01_Documentation/01_iperka/01_inform.md)
 - [02_plan.md](https://github.com/Nepomuk5665/ShitTicket/blob/main/01_Documentation/01_iperka/02_plan.md)
 - [03_decide.md](https://github.com/Nepomuk5665/ShitTicket/blob/main/01_Documentation/01_iperka/03_decide.md)
