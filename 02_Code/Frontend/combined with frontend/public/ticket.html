@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create SHITTICKET</title>
+    <link rel="stylesheet" href="design2.css">
+    <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-functions-compat.js"></script>
+    <script src="auth.js"></script>
+    <style>
+        #user-info {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            text-align: right;
+            display: none;
+        }
+        #user-info p {
+            margin: 0;
+        }
+        #error-message {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body style="background-color: rgb(247, 231, 209);">
+    <div id="user-info"></div>
+    <div class="container">
+        <h1>Create SHITTICKET</h1>
+        <form id="ticket-form">
+            <label for="event">What is the name of the event?:</label>
+            <input type="text" id="event" required>
+            
+            <label for="location">Where will it take place?:</label>
+            <input type="text" id="location" required>
+            
+            <label for="price">How much is the entrance fee?:</label>
+            <input type="number" id="price" required>
+            
+            <label for="maxPeople">What's the maximum number of people you want to come?:</label>
+            <input type="number" id="maxPeople" required>
+            
+            <button type="submit">Create</button>
+        </form>
+        <div id="error-message"></div>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <script>
+        // Check if user is authenticated
+        checkAuth().then(() => {
+            displayUserInfo();
+        }).catch(() => {
+            // If not authenticated, redirect to login page
+            window.location.href = 'login.html';
+        });
+
+        // Get a reference to the Firestore database
+        const db = firebase.firestore();
+
+        // Get a reference to Firebase Functions
+        const functions = firebase.functions();
+
+        // Handle form submission
+        document.getElementById('ticket-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const errorMessageDiv = document.getElementById('error-message');
+            errorMessageDiv.textContent = ''; // Clear any previous error messages
+
+            const event = document.getElementById('event').value;
+            const location = document.getElementById('location').value;
+            const price = parseFloat(document.getElementById('price').value);
+            const maxPeople = parseInt(document.getElementById('maxPeople').value);
+
+            try {
+                // Create Stripe product
+                const createStripeProduct = functions.httpsCallable('createStripeProduct');
+                const stripeResult = await createStripeProduct({ name: event, price: price });
+
+                if (!stripeResult.data || !stripeResult.data.productId || !stripeResult.data.priceId) {
+                    throw new Error('Failed to create Stripe product');
+                }
+
+                // Create ticket in Firestore
+                await db.collection('tickets').add({
+                    event: event,
+                    location: location,
+                    price: price,
+                    maxPeople: maxPeople,
+                    createdBy: firebase.auth().currentUser.uid,
+                    stripeProductId: stripeResult.data.productId,
+                    stripePriceId: stripeResult.data.priceId,
+                    createdAt: firebase.firestore.FieldValue.serverTimestamp()
+                });
+
+                alert('Ticket created successfully!');
+                // Clear form fields after successful submission
+                document.getElementById('ticket-form').reset();
+            } catch (error) {
+                console.error("Error creating ticket: ", error);
+                errorMessageDiv.textContent = `Error: ${error.message}`;
+            }
+        });
+    </script>
+</body>
+</html>

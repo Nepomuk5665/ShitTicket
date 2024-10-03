@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <link rel="stylesheet" href="design2.css">
+    <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-firestore-compat.js"></script>
+</head>
+<body style="background-color: rgb(247, 231, 209);">
+    <div class="container">
+        <h1>Sign up</h1>
+        <form id="signup-form">
+            <label for="firstname">What is your first name?:</label>
+            <input type="text" id="firstname" name="firstname" required>
+            <label for="surname">What is your surname?:</label>
+            <input type="text" id="surname" name="surname" required>
+            <label for="phonenumber">What is your phone number?</label>
+            <input type="tel" id="phonenumber" name="phonenumber" required>
+            <label for="email">What's your e-mail address?:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <label for="IBAN">What's your IBAN number?:</label>
+            <input type="text" id="IBAN" name="IBAN" required>
+            <br><br>
+            <button type="submit">Create Account</button>
+        </form>
+        <p>Already have an account? <a href="login.html">Log in</a></p>
+    </div>
+
+    <script>
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyAJwbMAKUX2i1JWhcIpHr_SlrNgLKZTtX8",
+            authDomain: "shitticket-5665.firebaseapp.com",
+            projectId: "shitticket-5665",
+            storageBucket: "shitticket-5665.appspot.com",
+            messagingSenderId: "736779061282",
+            appId: "1:736779061282:web:e19dd020bb473f0a2d227b"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        // Initialize Firestore
+        const db = firebase.firestore();
+
+        // Get form element
+        const signupForm = document.getElementById('signup-form');
+
+        // Add submit event listener
+        signupForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Get user info
+            const email = signupForm['email'].value;
+            const password = signupForm['password'].value;
+            const firstName = signupForm['firstname'].value;
+            const surname = signupForm['surname'].value;
+            const phoneNumber = signupForm['phonenumber'].value;
+            const iban = signupForm['IBAN'].value;
+
+            // Sign up the user
+            firebase.auth().createUserWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    // Signed in 
+                    const user = userCredential.user;
+                    console.log("User signed up:", user);
+
+                    // Save additional user info to Firestore
+                    return db.collection('users').doc(user.uid).set({
+                        firstName: firstName,
+                        surname: surname,
+                        phoneNumber: phoneNumber,
+                        email: email,
+                        iban: iban
+                    });
+                })
+                .then(() => {
+                    console.log("User information saved to Firestore");
+                    // Redirect to a welcome page or dashboard
+                    window.location.href = 'ticket.html';
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    console.error("Error signing up:", errorMessage);
+                    // You should display this error to the user
+                    alert("Error signing up: " + errorMessage);
+                });
+        });
+    </script>
+</body>
+</html>
