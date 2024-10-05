@@ -18,6 +18,9 @@
 * **Decision:** Use Hostinger for hosting.
   * **Reason:** Hostinger offers affordable, reliable hosting with good support for the size and scope of our project.
   * **Date:** 27.08.2024
+* **Decision:** Use Firebase hosting instead of Hostinger
+  * **Reason:** Firebase hosting is way easier to deploy than Hostinger.
+  * **Date:** 05.10.2024
 
 ## Decision matrix
 * One of the main decisions we had to make was how to handle task management—whether to use **only GitHub issues** or combine it with **Microsoft To Do** for individual task tracking. Our motivation was to balance ease of use and collaboration. The matrix below shows how we made this decision.
