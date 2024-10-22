@@ -16,12 +16,23 @@
     <div class="container">
         <h1>Sign up</h1>
         <form id="signupForm">
-            <input type="text" id="firstName" placeholder="What is your first name?" required>
-            <input type="text" id="surname" placeholder="What is your surname?" required>
-            <input type="tel" id="phone" placeholder="What is your phone number?" required>
-            <input type="email" id="email" placeholder="What's your e-mail address?" required>
-            <input type="password" id="password" placeholder="What do you want your password to be?" required>
-            <input type="text" id="iban" placeholder="What's your IBAN number?" required>
+            <label for="firstName">What is your first name?:</label>
+            <input type="text" id="firstName" name="firstName" required>
+
+            <label for="surname">What is your surname?:</label>
+            <input type="text" id="surname" name="surname" required>
+
+            <label for="phone">What is your phone number?:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="email">What's your e-mail address?:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">What do you want your password to be?:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="iban">What's your IBAN number?:</label>
+            <input type="text" id="iban" name="iban" required>
             
             <div style="text-align: right; margin-top: 10px;">
                 <small>

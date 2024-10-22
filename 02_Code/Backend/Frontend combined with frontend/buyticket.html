@@ -1,48 +1,134 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8"> <!-- Character coding for special characters -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Optimized for mobile devices(adjusts its layout for different screen sizes) -->
-    <title>Sign up</title> <!-- Title of the website -->
-    <link rel="stylesheet" href="design2.css"> <!-- Link with CSS file -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Ticket - SHITTICKET</title>
+    <link rel="stylesheet" href="design2.css">
+    <style>
+        .event-details {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .price {
+            font-size: 24px;
+            font-weight: bold;
+            color: #6c7bd1;
+        }
+        .detail-item {
+            margin: 10px 0;
+        }
+        .ticket-container {
+            position: relative;
+            width: 500px;
+            margin: 0 auto;
+        }
+        .event-name {
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            color: rgb(0, 0, 0);
+            font-size: 30px;
+            text-align: center;
+            width: 100%;
+            
+        }
+        .action-buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+    </style>
 </head>
-
-<body style="background-color: rgb(97, 103, 103);"> <!-- Background color of the page -->
-
-
-    <!-- Header area with white background -->
-    <header style="background-color: rgb(90, 96, 96); padding: 20px; text-align: left;"> <!-- White header with padding(space between the content and the border) -->
+<body>
+    <header style="background-color: rgb(90, 96, 96); padding: 20px; text-align: left;">
         <a href="index.html">
-            <img src="label.png" alt="Home" style="width:100px;height:auto;"> <!-- Label image in header -->
+            <img src="label.png" alt="label" style="width: 100px; height: auto;">
         </a>
     </header>
 
-    <div class="container"> <!-- Container for the contents -->
+    <div class="container">
+        <div class="ticket-container">
+            <h1 id="eventName" class="event-name">Loading...</h1>
+            <img src="ticket.png" style="width: 500px; height: auto;" alt="Ticket">
+        </div>
+        
+        <div class="event-details">
+            <div class="detail-item">Location: <span id="location">Loading...</span></div>
+            <div class="detail-item">Date: <span id="datetime">Loading...</span></div>
+            <div class="detail-item">Price: <span id="price" class="price">Loading...</span></div>
+            <div class="detail-item">Available Tickets: <span id="availableTickets">Loading...</span></div>
+        </div>
 
-        <!-- Distance after the header -->
-        <br><br>
+        <div class="action-buttons">
+            <button id="askQuestionBtn">Ask a question</button>
+            <button type="button" onclick="document.getElementById('buyForm').style.display='block'">Buy ticket</button>
+        </div>
 
-        <!-- Heading -->
-        <h1>You just got invited</h1>
-
-        <br> <!-- Spacing after the heading -->
-
-        <!-- Picture of the ticket -->
-        <img src="ticket.png" alt="Ticket Image" style="width: 500px; height: auto;"> <!-- Ticket image -->
-
-        <!-- Formular for entering the e-mail address -->
-        <form>
-            <!-- Input field for the e-mail address -->
+        <form id="buyForm" style="display: none;">
             <label for="email">What's your e-mail address?:</label>
-            <input type="email" id="email" name="email" required> <!-- E-mail must be entered -->
-
-            <br><br> <!-- Distance between input field and button -->
-
-            <!-- Button to buy the ticket -->
-            <button type="submit" onclick="window.location.href='stripe here.html'">Buy ticket</button>
+            <input type="email" id="email" required>
+            <br><br>
+            <button type="submit">Buy ticket</button>
         </form>
 
+        <div id="error-message"></div>
     </div>
 
+    <script type="module">
+        import { db, doc, getDoc } from './firebase-init.js';
+
+        let eventNameText = '';
+        let creatorEmail = '';
+
+        document.getElementById('askQuestionBtn').addEventListener('click', () => {
+            const signature = "\n\n\nThank you very much for choosing shitthicket.ch to create your own ticket!\nMade with love in Switzerland by NepoCute and Inaam";
+            const mailtoLink = `mailto:${creatorEmail}?subject=Question about event: ${eventNameText}&body=${signature}`;
+            window.location.href = mailtoLink;
+        });
+
+        async function loadTicketDetails() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const ticketId = urlParams.get('id');
+
+            if (!ticketId) {
+                window.location.href = 'index.html';
+                return;
+            }
+
+            try {
+                const ticketDoc = await getDoc(doc(db, "tickets", ticketId));
+                
+                if (!ticketDoc.exists()) {
+                    document.getElementById('error-message').textContent = "Ticket not found";
+                    return;
+                }
+
+                const data = ticketDoc.data();
+                
+                // Get creator's email
+                const creatorDoc = await getDoc(doc(db, "users", data.userId));
+                if (creatorDoc.exists()) {
+                    creatorEmail = creatorDoc.data().email;
+                }
+                
+                eventNameText = data.eventName; // Store event name for mailto link
+                document.getElementById('eventName').textContent = eventNameText;
+                document.getElementById('location').textContent = data.location;
+                document.getElementById('datetime').textContent = new Date(data.datetime).toLocaleString('de-DE');
+                document.getElementById('price').textContent = `€${data.price.toFixed(2)}`;
+                document.getElementById('availableTickets').textContent = 
+                    `${data.maxPeople - data.soldTickets} of ${data.maxPeople}`;
+            } catch (error) {
+                document.getElementById('error-message').textContent = "Error loading ticket details";
+            }
+        }
+
+        // Load ticket details when page loads
+        loadTicketDetails();
+    </script>
 </body>
 </html>

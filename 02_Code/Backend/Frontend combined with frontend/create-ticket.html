@@ -5,6 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Ticket - SHITTICKET</title>
     <link rel="stylesheet" href="design2.css">
+    <style>
+        .success-message {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 4px;
+            display: none;
+            color: black;
+        }
+        .copy-link {
+            margin-top: 10px;
+            padding: 5px 10px;
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            color: black;
+        }
+        .copy-link:hover {
+            background-color: #f5f5f5 !important;
+        }
+    </style>
 </head>
 <body>
     <header style="background-color: rgb(90, 96, 96); padding: 20px; text-align: left;">
@@ -34,6 +55,12 @@
             <br><br>
             <button type="submit">Create</button>
         </form>
+        <div class="success-message" id="successMessage">
+            <h3>Ticket created successfully!</h3>
+            <p>Share this link with your potential buyers:</p>
+            <div id="ticketLink" style="word-break: break-all;"></div>
+            <button class="copy-link" onclick="copyLink()">Copy Link</button>
+        </div>
         <div id="error-message"></div>
     </div>
 
@@ -41,6 +68,17 @@
         import { auth, db, onAuthStateChanged, collection, addDoc, doc, getDoc } from './firebase-init.js';
 
         const form = document.getElementById('createTicketForm');
+        const successMessage = document.getElementById('successMessage');
+
+        window.copyLink = function() {
+            const link = document.getElementById('ticketLink').textContent;
+            navigator.clipboard.writeText(link);
+            const copyButton = document.querySelector('.copy-link');
+            copyButton.textContent = 'Copied!';
+            setTimeout(() => {
+                copyButton.textContent = 'Copy Link';
+            }, 2000);
+        };
 
         onAuthStateChanged(auth, async (user) => {
             if (!user) {
@@ -48,7 +86,6 @@
                 return;
             }
 
-            // Check if user is banned
             const userDoc = await getDoc(doc(db, "users", user.uid));
             if (userDoc.exists() && userDoc.data().isBanned) {
                 auth.signOut();
@@ -63,7 +100,7 @@
             e.preventDefault();
             
             try {
-                await addDoc(collection(db, "tickets"), {
+                const ticketDoc = await addDoc(collection(db, "tickets"), {
                     eventName: document.getElementById('eventName').value,
                     location: document.getElementById('location').value,
                     datetime: document.getElementById('datetime').value,
@@ -75,7 +112,11 @@
                     soldTickets: 0
                 });
 
-                window.location.href = 'index.html';
+                // Generate and show the link
+                const ticketLink = `${window.location.origin}/buyticket.html?id=${ticketDoc.id}`;
+                document.getElementById('ticketLink').textContent = ticketLink;
+                form.style.display = 'none';
+                successMessage.style.display = 'block';
             } catch (error) {
                 document.getElementById('error-message').textContent = error.message;
             }
