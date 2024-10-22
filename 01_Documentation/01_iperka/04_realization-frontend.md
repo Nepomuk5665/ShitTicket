@@ -8,4 +8,4 @@
 * To do this, I created the logo with AI.
 
 
-* With that, I have successfully resolved [issue #24](https://github.com/InaamA21/ShitTicket/issues/24]).
+* With that, I have successfully resolved [issue #24](https://github.com/Nepomuk5665/ShitTicket/issues/24).
