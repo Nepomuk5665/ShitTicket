@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8"> <!-- Character coding for special characters -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Optimized for mobile devices(adjusts its layout for different screen sizes) -->
+    <title>Sign up</title> <!-- Title of the website -->
+    <link rel="stylesheet" href="design2.css"> <!-- Link with CSS file -->
+</head>
+
+<body style="background-color: rgb(97, 103, 103);"> <!-- Background color of the page -->
+
+
+    <!-- Header area with white background -->
+    <header style="background-color: rgb(90, 96, 96); padding: 20px; text-align: left;"> <!-- White header with padding(space between the content and the border) -->
+        <img src="label.png" alt="label" style="width: 100px; height: auto;"> <!-- Label image in header -->
+    </header>
+
+    <div class="container"> <!-- Container for the contents -->
+
+        <!-- Distance after the header -->
+        <br><br>
+
+        <!-- Heading -->
+        <h1>You just got invited</h1>
+
+        <br> <!-- Spacing after the heading -->
+
+        <!-- Picture of the ticket -->
+        <img src="ticket.png" alt="Ticket Image" style="width: 500px; height: auto;"> <!-- Ticket image -->
+
+        <!-- Formular for entering the e-mail address -->
+        <form>
+            <!-- Input field for the e-mail address -->
+            <label for="email">What's your e-mail address?:</label>
+            <input type="email" id="email" name="email" required> <!-- E-mail must be entered -->
+
+            <br><br> <!-- Distance between input field and button -->
+
+            <!-- Button to buy the ticket -->
+            <button type="submit" onclick="window.location.href='buypage2.html'">Buy ticket</button>
+        </form>
+
+    </div>
+
+</body>
+</html>
