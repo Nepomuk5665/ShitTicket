@@ -1,0 +1,46 @@
+/* Basic styles for the website */
+body {
+    font-family: Arial, sans-serif; /* Font */
+    margin: 20px; /* Distance around the content */
+    background-color: rgb(97, 103, 103); /* gray background color */
+}
+
+/* Container for the contents */
+.container {
+    max-width: 400px; /* Maximum width of the container */
+    margin: auto; /* Centers the container */
+}
+
+/* Styles for the labels */
+label {
+    display: block; /* Display labels on a separate line */
+    margin: 10px 0 5px; /* Distance above and below the labels */
+}
+
+/* Styles for input fields */
+input[type="text"], input[type="email"], textarea {
+    width: 100%; /* Fills the entire width of the container */
+    padding: 8px; /* Inner spacing for the input fields(padding: space between the content and the border) */
+    margin-bottom: 10px; /* Spacing under the input fields */
+    border: 1px solid #111010; /* Dark border around the fields */
+    border-radius: 4px; /* Rounded corners */
+}
+
+/* Styles for the button */
+button {
+    padding: 10px 20px; /* Internal spacing in the button */
+    background-color: #6c7bd1; /* Blue background color for the button */
+    color: white; /* White font */
+    border: none; /* No edge */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Mouse pointer becomes a hand when you move over it */
+    transition: background-color 0.3s ease; /* Smooth transition of color on hover */
+    font-size: 18px; /* Font size */
+    text-transform: uppercase; /* Text in the button in upper case */
+    outline: none; /* No border when the button is focused */
+}
+
+/* Styles for the hover effect of the button */
+button:hover {
+    background-color: #83afe1; /* Lighter color when the mouse is over the button */
+}
