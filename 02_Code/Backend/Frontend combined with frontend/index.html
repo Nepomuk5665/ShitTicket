@@ -1,26 +1,46 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8"> <!-- Character coding for special characters -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Optimized for mobile devices(adjusts its layout for different screen sizes) -->
-    <title>Willkommen bei SHITTICKET</title> <!-- Title of the website -->
-    <link rel="stylesheet" href="design.css"> <!-- Link to the CSS file -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Willkommen bei SHITTICKET</title>
+    <link rel="stylesheet" href="design.css">
 </head>
-
-    <!-- Header section with white background -->
-    <header style="background-color: rgb(13, 13, 13); padding: 20px; text-align: left;"> <!-- White header with padding(space between the content and the border) -->
-        <img src="label.png" alt="label" style="width: 100px; height: auto;"> <!-- Label image in header -->
-    </header>
-
 <body>
+    <header style="background-color: rgb(13, 13, 13); padding: 20px; text-align: left;">
+        <img src="label.png" alt="label" style="width: 100px; height: auto;">
+    </header>
     <br><br><br>
-    <!-- Description in font h1 -->
     <h1>WELCOME TO SHITTICKET</h1>
-    
-    <!-- Description in font h2 -->
     <h2>A place where you can sell your tickets at the best prices. Quick and easy with us.</h2>
     
-    <!-- Button that leads to another page -->
-    <button onclick="window.location.href='sign-up.html'">Create</button> <!-- Button that leads to the 'sign-up.html' page when clicked. -->
+    <button id="createButton">Create</button>
+    <button id="logoutButton" style="display: none;">Logout</button>
+
+    <script type="module">
+        import { auth, onAuthStateChanged, signOut } from './firebase-init.js';
+        
+        const createButton = document.getElementById('createButton');
+        const logoutButton = document.getElementById('logoutButton');
+
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                createButton.onclick = () => window.location.href = 'create-ticket.html';
+                logoutButton.style.display = 'inline-block';
+            } else {
+                createButton.onclick = () => window.location.href = 'sign-up.html';
+                logoutButton.style.display = 'none';
+            }
+        });
+
+        logoutButton.addEventListener('click', async () => {
+            try {
+                await signOut(auth);
+                window.location.href = 'index.html';
+            } catch (error) {
+                console.error('Error signing out:', error);
+            }
+        });
+    </script>
 </body>
 </html>

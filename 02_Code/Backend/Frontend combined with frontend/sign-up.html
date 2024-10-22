@@ -1,53 +1,73 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8"> <!-- Character coding for special characters -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Optimized for mobile devices(adjusts its layout for different screen sizes) -->
-    <title>Sign up</title> <!-- Title of the website -->
-    <link rel="stylesheet" href="design2.css"> <!-- Link to the CSS file -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - SHITTICKET</title>
+    <link rel="stylesheet" href="design2.css">
 </head>
-
-    <!-- Header section with white background -->
-    <header style="background-color: rgb(90, 96, 96); padding: 20px; text-align: left;"> <!-- White header with padding(space between the content and the border) -->
-        <img src="label.png" alt="label" style="width: 100px; height: auto;"> <!-- Label image in header -->
+<body>
+    <header style="background-color: rgb(90, 96, 96); padding: 20px; text-align: left;">
+        <a href="index.html">
+            <img src="label.png" alt="label" style="width: 100px; height: auto;">
+        </a>
     </header>
 
-    <div class="container"> <!-- Container for the contents -->
-        <h1>Sign up</h1> <!-- Heading of the sheet -->
-
-        <form> <!-- Start of the online form -->
-
-            <!-- Input field for the first name -->
-            <label for="firstname">What is your first name?:</label>
-            <input type="text" id="firstname" name="firstname" required> <!-- The input field is mandatory -->
-
-            <!-- Input field for the surname -->
-            <label for="surname">What is your surname?:</label>
-            <input type="text" id="surname" name="surname" required> <!-- The input field is mandatory -->
-
-            <!-- Input field for the telephone number -->
-            <label for="phonenumber">What is your phone number?:</label>
-            <input type="tel" id="phonenumber" name="phonenumber" required> <!-- Phone number, mandatory -->
-
-            <!-- Input field for the e-mail address -->
-            <label for="email">What's your e-mail address?:</label>
-            <input type="email" id="email" name="email" required> <!-- E-mail address, mandatory -->
+    <div class="container">
+        <h1>Sign up</h1>
+        <form id="signupForm">
+            <input type="text" id="firstName" placeholder="What is your first name?" required>
+            <input type="text" id="surname" placeholder="What is your surname?" required>
+            <input type="tel" id="phone" placeholder="What is your phone number?" required>
+            <input type="email" id="email" placeholder="What's your e-mail address?" required>
+            <input type="password" id="password" placeholder="What do you want your password to be?" required>
+            <input type="text" id="iban" placeholder="What's your IBAN number?" required>
             
-            <label for="email">What do you want your password to be?:</label>
-            <input type="email" id="email" name="email" required> <!-- Passwort address, mandatory -->
-
-            <!-- Input field for the IBAN -->
-            <label for="IBAN">What's your IBAN number?:</label>
-            <input type="text" id="IBAN" name="IBAN" required> <!-- IBAN field, mandatory -->
-
-            <!-- Button to go to the next form -->
-            <br><br>
-            <input type="button" onclick="window.location.href='login.html'" value="already have an account?">
-            <br><br>
-            <button onclick="window.location.href='create-ticket.html'">Create account</button> <!-- Button that leads to the 'create-ticket.html' page when clicked. -->
-
-        </form> <!-- End of the form -->
+            <div style="text-align: right; margin-top: 10px;">
+                <small>
+                    <a href="login.html" style="color: #6c7bd1; text-decoration: none;">Already have an account?</a>
+                </small>
+            </div>
+            
+            <br>
+            <button type="submit">Create account</button>
+        </form>
+        <div id="error-message"></div>
     </div>
 
+    <script type="module">
+        import { auth, db, createUserWithEmailAndPassword, doc, setDoc } from './firebase-init.js';
+
+        document.getElementById('signupForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const firstName = document.getElementById('firstName').value;
+            const surname = document.getElementById('surname').value;
+            const phone = document.getElementById('phone').value;
+            const iban = document.getElementById('iban').value;
+            const errorMessage = document.getElementById('error-message');
+
+            try {
+                const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+                const user = userCredential.user;
+
+                await setDoc(doc(db, "users", user.uid), {
+                    firstName: firstName,
+                    surname: surname,
+                    phone: phone,
+                    email: email,
+                    iban: iban,
+                    createdAt: new Date().toISOString(),
+                    isActive: true,
+                    isBanned: false
+                });
+
+                window.location.href = 'create-ticket.html';
+            } catch (error) {
+                errorMessage.textContent = error.message;
+            }
+        });
+    </script>
 </body>
 </html>
