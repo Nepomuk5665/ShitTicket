@@ -6,21 +6,22 @@
 # Frontend: Creation of the logo [issue #22](https://github.com/Nepomuk5665/ShitTicket/issues/22)
 * This issue is about the logo of our website.
 * For this problem we used AI to create our logo.
-* It was not easy to find the right logo, because we had to explain in detail how our logo should look like. We spent approximately 50min. It took a long time until a design was generated, and the logos didn't catch our eye or didn't look the way we wanted them to.  
+* It was not easy to find the right logo, because we had to explain in detail how our logo should look like. We spent approximately 50min. It took a long time until a design was generated, and the logos didn't catch our eye or didn't look the way we wanted them to.
+* We had to write things like: The logo should be black, It should be in the shape of a ticket, The logo should say SHITTICKET, It should have a golden writing
 
  # Frontend: buy ticket page [issue #23](https://github.com/Nepomuk5665/ShitTicket/issues/23)
 * We first researched on w3shools how to program a website with html to refresh my knowledge.
 * After that we started to program the basics.
 * With label, title and text.
-* This was not so problematic for me as I have programmed such websites before.
+* This was not so problematic for us as we have programmed such websites before.
 * After that we designed the website using css
 * Then we put our logo in the header
 
 # Frontend: Homepage [issue #24](https://github.com/Nepomuk5665/ShitTicket/issues/24)
 * We first researched on w3shools how to program a website with html to refresh my knowledge.
 * After that we started to program the basics.
-* With label, title and text.
-* This was not so problematic for me as I have programmed such websites before.
+* With title and text .
+* This was not so problematic for us as we have programmed such websites before.
 * After that we designed the website using css
 * Then we put our logo in the header
 
@@ -28,7 +29,7 @@
 * We first researched on w3shools how to program a website with html to refresh my knowledge.
 * After that we started to program the basics.
 * With label, title and text.
-* This was not so problematic for me as I have programmed such websites before.
+* This was not so problematic for us as we have programmed such websites before.
 * After that we designed the website using css
 * Then we put our logo in the header
 
@@ -36,7 +37,7 @@
 * We first researched on w3shools how to program a website with html to refresh my knowledge.
 * After that we started to program the basics.
 * With label, title and text.
-* This was not so problematic for me as I have programmed such websites before.
+* This was not so problematic for us as we have programmed such websites before.
 * After that we designed the website using css
 * Then we put our logo in the header
 
