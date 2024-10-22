@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - SHITTICKET</title>
+    <link rel="stylesheet" href="design2.css">
+</head>
+<body>
+    <header style="background-color: rgb(90, 96, 96); padding: 20px; text-align: left;">
+        <a href="index.html">
+            <img src="label.png" alt="label" style="width: 100px; height: auto;">
+        </a>
+    </header>
+
+    <div class="container">
+        <h1>Login</h1>
+        <form id="loginForm">
+            <label for="email">What's your e-mail address?:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="password">What's your password?:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <div style="text-align: right; margin-top: 10px;">
+                <small>
+                    <a href="sign-up.html" style="color: #6c7bd1; text-decoration: none;">Don't have an account?</a>
+                </small>
+            </div>
+            
+            <br>
+            <button type="submit">Login</button>
+        </form>
+        <div id="error-message" style="color: red; margin-top: 10px;"></div>
+    </div>
+
+    <script type="module">
+        import { auth, db, signInWithEmailAndPassword, doc, getDoc } from './firebase-init.js';
+
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('error-message');
+
+            try {
+                const userCredential = await signInWithEmailAndPassword(auth, email, password);
+                const user = userCredential.user;
+
+                const userDoc = await getDoc(doc(db, "users", user.uid));
+                if (userDoc.exists() && userDoc.data().isBanned) {
+                    await auth.signOut();
+                    errorMessage.textContent = "This account has been banned.";
+                    return;
+                }
+
+                window.location.href = 'create-ticket.html';
+            } catch (error) {
+                errorMessage.textContent = "Invalid email or password.";
+            }
+        });
+    </script>
+</body>
+</html>

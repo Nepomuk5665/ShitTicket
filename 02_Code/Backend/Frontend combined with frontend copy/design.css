@@ -1,0 +1,38 @@
+/* Basic styles for the website */
+body {
+    background-color: black;
+    font-family: Arial, sans-serif; /* Font */
+    text-align: center; /* Center text */
+    padding-top: 50px; /* Distance above */
+    margin: 0; /* No external distances */
+    padding: 0; /* No internal spacing */
+}
+
+/* Heading h1 style */
+h1 {
+    color: #9eb2f1; /* Light blue font */
+}
+
+/* Heading h2 style */
+h2 {
+    color: white; /* White font */
+    margin: 20px auto; /* Distance above and below */
+    max-width: 600px; /* Maximum 600px width for better readability */
+}
+
+/* Style for buttons */
+button {
+    padding: 10px 20px; /* Inside distance */
+    background-color: #6c7bd1; /* Blue background */
+    color: white; /* White font */
+    border: none; /* No edges */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer when mouse over button */
+    font-size: 18px; /* Font size */
+    text-transform: uppercase; /* Upper case letters */
+}
+
+/* Hover effect for the button (when the mouse moves over it) */
+button:hover {
+    background-color: #80a6e7; /* Brighter blue when driving over it */
+}

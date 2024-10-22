@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Ticket - SHITTICKET</title>
+    <link rel="stylesheet" href="design2.css">
+    <style>
+        .success-message {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 4px;
+            display: none;
+            color: black;
+        }
+        .copy-link {
+            margin-top: 10px;
+            padding: 5px 10px;
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            color: black;
+        }
+        .copy-link:hover {
+            background-color: #f5f5f5 !important;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: rgb(90, 96, 96); padding: 20px; text-align: left;">
+        <a href="index.html">
+            <img src="label.png" alt="label" style="width: 100px; height: auto;">
+        </a>
+    </header>
+
+    <div class="container">
+        <h1>Create SHITTICKET</h1>
+        <form id="createTicketForm" style="display: none;">
+            <label for="eventName">What is the name of the event?:</label>
+            <input type="text" id="eventName" name="eventName" required>
+            
+            <label for="location">Where will it take place?:</label>
+            <input type="text" id="location" name="location" required>
+            
+            <label for="datetime">When will it take place?:</label>
+            <input type="datetime-local" id="datetime" name="datetime" required>
+            
+            <label for="price">How much is the entrance fee?:</label>
+            <input type="number" id="price" name="price" step="0.01" required>
+            
+            <label for="maxPeople">What's the maximum number of people you want to come?:</label>
+            <input type="number" id="maxPeople" name="maxPeople" required>
+            
+            <br><br>
+            <button type="submit">Create</button>
+        </form>
+        <div class="success-message" id="successMessage">
+            <h3>Ticket created successfully!</h3>
+            <p>Share this link with your potential buyers:</p>
+            <div id="ticketLink" style="word-break: break-all;"></div>
+            <button class="copy-link" onclick="copyLink()">Copy Link</button>
+        </div>
+        <div id="error-message"></div>
+    </div>
+
+    <script type="module">
+        import { auth, db, onAuthStateChanged, collection, addDoc, doc, getDoc } from './firebase-init.js';
+
+        const form = document.getElementById('createTicketForm');
+        const successMessage = document.getElementById('successMessage');
+
+        window.copyLink = function() {
+            const link = document.getElementById('ticketLink').textContent;
+            navigator.clipboard.writeText(link);
+            const copyButton = document.querySelector('.copy-link');
+            copyButton.textContent = 'Copied!';
+            setTimeout(() => {
+                copyButton.textContent = 'Copy Link';
+            }, 2000);
+        };
+
+        onAuthStateChanged(auth, async (user) => {
+            if (!user) {
+                window.location.href = 'sign-up.html';
+                return;
+            }
+
+            const userDoc = await getDoc(doc(db, "users", user.uid));
+            if (userDoc.exists() && userDoc.data().isBanned) {
+                auth.signOut();
+                window.location.href = 'index.html';
+                return;
+            }
+
+            form.style.display = 'block';
+        });
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            try {
+                const ticketDoc = await addDoc(collection(db, "tickets"), {
+                    eventName: document.getElementById('eventName').value,
+                    location: document.getElementById('location').value,
+                    datetime: document.getElementById('datetime').value,
+                    price: parseFloat(document.getElementById('price').value),
+                    maxPeople: parseInt(document.getElementById('maxPeople').value),
+                    createdAt: new Date().toISOString(),
+                    userId: auth.currentUser.uid,
+                    status: 'active',
+                    soldTickets: 0
+                });
+
+                // Generate and show the link
+                const ticketLink = `${window.location.origin}/buyticket.html?id=${ticketDoc.id}`;
+                document.getElementById('ticketLink').textContent = ticketLink;
+                form.style.display = 'none';
+                successMessage.style.display = 'block';
+            } catch (error) {
+                document.getElementById('error-message').textContent = error.message;
+            }
+        });
+    </script>
+</body>
+</html>

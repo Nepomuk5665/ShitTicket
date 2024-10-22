@@ -1,0 +1,58 @@
+[debug] [2024-10-22T16:51:28.921Z] ----------------------------------------------------------------------
+[debug] [2024-10-22T16:51:28.923Z] Command:       /opt/homebrew/Cellar/node/22.9.0/bin/node /opt/homebrew/bin/firebase init
+[debug] [2024-10-22T16:51:28.923Z] CLI Version:   13.11.2
+[debug] [2024-10-22T16:51:28.923Z] Platform:      darwin
+[debug] [2024-10-22T16:51:28.923Z] Node Version:  v22.9.0
+[debug] [2024-10-22T16:51:28.923Z] Time:          Tue Oct 22 2024 18:51:28 GMT+0200 (Central European Summer Time)
+[debug] [2024-10-22T16:51:28.924Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-10-22T16:51:28.959Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-10-22T16:51:28.959Z] > authorizing via signed-in user (nepomuk5665@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /Users/nepomukcrhonek/Documents
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2024-10-22T16:51:49.767Z] Using project from CLI flag: shitticket-5665
+[debug] [2024-10-22T16:51:49.769Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/shitticket-5665 [none]
+[debug] [2024-10-22T16:51:50.273Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/shitticket-5665 200
+[debug] [2024-10-22T16:51:50.273Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/shitticket-5665 {"projectId":"shitticket-5665","projectNumber":"736779061282","displayName":"ShitTicket","name":"projects/shitticket-5665","resources":{"hostingSite":"shitticket-5665"},"state":"ACTIVE","etag":"1_5afb4ba9-3f61-43ee-a5ac-39867a078c1f"}
+[info] i  Using project shitticket-5665 (ShitTicket) 
+[info] 
+=== Functions Setup
+[debug] [2024-10-22T16:51:50.286Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-10-22T16:51:50.286Z] > authorizing via signed-in user (nepomuk5665@gmail.com)
+[debug] [2024-10-22T16:51:50.287Z] [iam] checking project shitticket-5665 for permissions ["firebase.projects.get"]
+[debug] [2024-10-22T16:51:50.287Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/shitticket-5665:testIamPermissions [none]
+[debug] [2024-10-22T16:51:50.287Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/shitticket-5665:testIamPermissions x-goog-quota-user=projects/shitticket-5665
+[debug] [2024-10-22T16:51:50.287Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/shitticket-5665:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-10-22T16:51:50.608Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/shitticket-5665:testIamPermissions 200
+[debug] [2024-10-22T16:51:50.608Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/shitticket-5665:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-10-22T16:51:50.609Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shitticket-5665/services/cloudfunctions.googleapis.com [none]
+[debug] [2024-10-22T16:51:50.609Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shitticket-5665/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/shitticket-5665
+[debug] [2024-10-22T16:51:50.611Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shitticket-5665/services/runtimeconfig.googleapis.com [none]
+[debug] [2024-10-22T16:51:50.611Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shitticket-5665/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/shitticket-5665
+[debug] [2024-10-22T16:51:51.613Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/shitticket-5665/services/runtimeconfig.googleapis.com 200
+[debug] [2024-10-22T16:51:51.613Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/shitticket-5665/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2024-10-22T16:51:51.624Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/shitticket-5665/services/cloudfunctions.googleapis.com 200
+[debug] [2024-10-22T16:51:51.624Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/shitticket-5665/services/cloudfunctions.googleapis.com [omitted]
+[info] 
+Detected existing codebase(s): default
+
