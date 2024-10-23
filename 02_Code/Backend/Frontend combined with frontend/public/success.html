@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Success - SHITTICKET</title>
+    <link rel="stylesheet" href="design2.css">
+    <style>
+        .qr-container {
+            text-align: center;
+            margin: 20px auto;
+            max-width: 300px;
+        }
+        .qr-code {
+            margin: 20px 0;
+            max-width: 100%;
+        }
+        .success-message {
+            color: #4CAF50;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .error-message {
+            color: red;
+            margin: 20px 0;
+            text-align: center;
+        }
+        #loadingMessage {
+            text-align: center;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: rgb(90, 96, 96); padding: 20px; text-align: left;">
+        <a href="index.html">
+            <img src="label.png" alt="label" style="width: 100px; height: auto;">
+        </a>
+    </header>
+
+    <div class="container">
+        <h1>Payment Successful!</h1>
+        <div class="success-message">Your ticket has been purchased successfully.</div>
+        
+        <div id="loadingMessage">Generating your ticket...</div>
+        
+        <div class="qr-container">
+            <h2>Your Ticket QR Code</h2>
+            <img id="qrCode" class="qr-code" style="display: none;" alt="Ticket QR Code">
+            <p>Please save this QR code. You will need it to enter the event.</p>
+            <button onclick="window.print()" style="display: none;" id="printButton">Print Ticket</button>
+        </div>
+
+        <div id="error-message" class="error-message" style="display: none;"></div>
+    </div>
+
+    <script type="module">
+        async function generateQRCode() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const sessionId = urlParams.get('session_id');
+            const loadingMessage = document.getElementById('loadingMessage');
+            const errorMessage = document.getElementById('error-message');
+            const qrCode = document.getElementById('qrCode');
+            const printButton = document.getElementById('printButton');
+
+            if (!sessionId) {
+                errorMessage.textContent = 'Invalid session';
+                errorMessage.style.display = 'block';
+                loadingMessage.style.display = 'none';
+                return;
+            }
+
+            try {
+                const response = await fetch('https://europe-west6-shitticket-5665.cloudfunctions.net/createTicketQR', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({ sessionId })
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to generate QR code');
+                }
+
+                const result = await response.json();
+                
+                if (result.qrCodeUrl) {
+                    qrCode.src = result.qrCodeUrl;
+                    qrCode.style.display = 'block';
+                    printButton.style.display = 'block';
+                    loadingMessage.style.display = 'none';
+                } else {
+                    throw new Error('Invalid QR code response');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                errorMessage.textContent = error.message;
+                errorMessage.style.display = 'block';
+                loadingMessage.style.display = 'none';
+            }
+        }
+
+        // Generate QR code when page loads
+        generateQRCode();
+    </script>
+</body>
+</html>

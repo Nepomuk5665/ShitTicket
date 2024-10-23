@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Scanner - SHITTICKET</title>
+    <link rel="stylesheet" href="design2.css">
+    <script src="https://unpkg.com/html5-qrcode"></script>
+    <style>
+        .scanner-container {
+            max-width: 600px;
+            margin: 20px auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+        #reader {
+            width: 100% !important;
+            margin: 20px auto;
+            display: none;
+        }
+        .result-container {
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 4px;
+            display: none;
+        }
+        .success {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .error {
+            background-color: #f44336;
+            color: white;
+        }
+        .ticket-info {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+            text-align: left;
+            color: black;
+        }
+        .auth-container {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+        }
+        .auth-form input {
+            margin: 10px 0;
+            padding: 8px;
+            width: 100%;
+            max-width: 300px;
+        }
+        #authStatus {
+            margin: 10px 0;
+            font-weight: bold;
+        }
+        .error-text {
+            color: #f44336;
+            margin: 10px 0;
+        }
+        @media (max-width: 768px) {
+            #reader {
+                width: 100% !important;
+            }
+            #reader video {
+                width: 100% !important;
+                max-height: 70vh !important;
+                object-fit: cover !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: rgb(90, 96, 96); padding: 20px; text-align: left;">
+        <a href="index.html">
+            <img src="label.png" alt="label" style="width: 100px; height: auto;">
+        </a>
+    </header>
+
+    <div class="scanner-container">
+        <h1>Ticket Scanner</h1>
+        
+        <div id="authStatus"></div>
+        
+        <div id="loginContainer" class="auth-container">
+            <h2>Login Required</h2>
+            <form id="loginForm" class="auth-form">
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+            <div id="loginError" class="error-text"></div>
+        </div>
+
+        <div id="scannerControls" style="display: none;">
+            <button id="startButton">Start Scanner</button>
+            <button id="stopButton" style="display: none;">Stop Scanner</button>
+            <div id="reader"></div>
+            <div id="loading" style="display: none;">Processing ticket...</div>
+            <div id="result" class="result-container"></div>
+        </div>
+    </div>
+
+    <audio id="successSound" src="sound.mp3" preload="auto"></audio>
+
+    <script type="module">
+        import { auth, db, doc, getDoc, updateDoc } from './firebase-init.js';
+        import { signInWithEmailAndPassword, signOut } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
+
+        let html5QrcodeScanner = null;
+        let isScanning = false;
+        let isProcessing = false;
+
+        const loginForm = document.getElementById('loginForm');
+        const loginContainer = document.getElementById('loginContainer');
+        const scannerControls = document.getElementById('scannerControls');
+        const authStatus = document.getElementById('authStatus');
+        const loginError = document.getElementById('loginError');
+        const startButton = document.getElementById('startButton');
+        const stopButton = document.getElementById('stopButton');
+        const resultContainer = document.getElementById('result');
+        const loadingDiv = document.getElementById('loading');
+        const successSound = document.getElementById('successSound');
+        const readerDiv = document.getElementById('reader');
+
+        // Preload sound
+        successSound.load();
+
+        auth.onAuthStateChanged((user) => {
+            if (user) {
+                authStatus.innerHTML = `
+                    Logged in as: ${user.email}
+                    <br>
+                    <button onclick="window.logout()">Logout</button>
+                `;
+                loginContainer.style.display = 'none';
+                scannerControls.style.display = 'block';
+            } else {
+                authStatus.textContent = 'Not logged in';
+                loginContainer.style.display = 'block';
+                scannerControls.style.display = 'none';
+                if (html5QrcodeScanner) {
+                    stopScanner();
+                }
+            }
+        });
+
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            loginError.textContent = '';
+            
+            try {
+                await signInWithEmailAndPassword(
+                    auth,
+                    loginForm.email.value,
+                    loginForm.password.value
+                );
+                loginForm.reset();
+            } catch (error) {
+                loginError.textContent = error.message;
+            }
+        });
+
+        window.logout = async () => {
+            try {
+                await signOut(auth);
+            } catch (error) {
+                console.error('Logout error:', error);
+            }
+        };
+
+        window.scanAnother = async () => {
+            resultContainer.style.display = 'none';
+            await startScanner();
+        };
+
+        async function validateTicket(qrData) {
+            if (!auth.currentUser) {
+                throw new Error("Please login first");
+            }
+
+            try {
+                const ticketData = JSON.parse(qrData);
+                
+                const ticketDoc = await getDoc(doc(db, "purchased_tickets", ticketData.ticketId));
+                if (!ticketDoc.exists()) {
+                    throw new Error("Ticket not found");
+                }
+
+                const ticketInfo = ticketDoc.data();
+
+                const eventDoc = await getDoc(doc(db, "tickets", ticketInfo.eventId));
+                if (!eventDoc.exists()) {
+                    throw new Error("Event not found");
+                }
+
+                const eventInfo = eventDoc.data();
+
+                if (eventInfo.userId !== auth.currentUser.uid) {
+                    throw new Error("You don't have permission to scan tickets for this event");
+                }
+
+                if (ticketInfo.used) {
+                    throw new Error("This ticket has already been used!");
+                }
+
+                await updateDoc(doc(db, "purchased_tickets", ticketData.ticketId), {
+                    used: true,
+                    usedAt: new Date().toISOString(),
+                    scannedBy: auth.currentUser.email
+                });
+
+                await successSound.play();
+
+                resultContainer.className = 'result-container success';
+                resultContainer.innerHTML = `
+                    <h3>✓ Valid Ticket!</h3>
+                    <div class="ticket-info">
+                        <div><strong>Event:</strong> ${eventInfo.eventName}</div>
+                        <div><strong>Location:</strong> ${eventInfo.location}</div>
+                        <div><strong>Date:</strong> ${new Date(eventInfo.datetime).toLocaleString('de-DE')}</div>
+                        <div><strong>Customer:</strong> ${ticketInfo.customerEmail}</div>
+                    </div>
+                    <button onclick="window.scanAnother()">Scan Another Ticket</button>
+                `;
+                resultContainer.style.display = 'block';
+                
+            } catch (error) {
+                console.error('Validation Error:', error);
+                throw error;
+            }
+        }
+
+        async function onScanSuccess(decodedText) {
+            if (!isScanning || isProcessing || !auth.currentUser) return;
+            
+            try {
+                isProcessing = true;
+                readerDiv.style.display = 'none';
+                loadingDiv.style.display = 'block';
+                
+                await validateTicket(decodedText);
+                
+            } catch (error) {
+                resultContainer.className = 'result-container error';
+                resultContainer.innerHTML = `
+                    <h3>Invalid Ticket</h3>
+                    <p>${error.message}</p>
+                    <button onclick="window.scanAnother()">Try Again</button>
+                `;
+                resultContainer.style.display = 'block';
+            } finally {
+                loadingDiv.style.display = 'none';
+                await stopScanner();
+                isProcessing = false;
+            }
+        }
+
+        async function startScanner() {
+            if (!auth.currentUser) {
+                alert('Please login first');
+                return;
+            }
+
+            try {
+                const cameras = await Html5Qrcode.getCameras();
+                if (cameras && cameras.length) {
+                    let selectedCamera = cameras[0].id;
+                    const backCamera = cameras.find(camera => 
+                        camera.label.toLowerCase().includes('back') || 
+                        camera.label.toLowerCase().includes('rear') ||
+                        camera.label.toLowerCase().includes('environment'));
+                    
+                    if (backCamera) {
+                        selectedCamera = backCamera.id;
+                    }
+
+                    if (html5QrcodeScanner) {
+                        await html5QrcodeScanner.clear();
+                    }
+
+                    html5QrcodeScanner = new Html5Qrcode("reader");
+                    readerDiv.style.display = 'block';
+                    
+                    await html5QrcodeScanner.start(
+                        selectedCamera,
+                        {
+                            fps: 10,
+                            qrbox: 250
+                        },
+                        onScanSuccess,
+                        () => {}
+                    );
+                    
+                    isScanning = true;
+                    startButton.style.display = 'none';
+                    stopButton.style.display = 'inline-block';
+                    resultContainer.style.display = 'none';
+                } else {
+                    alert('No cameras found');
+                }
+            } catch (err) {
+                alert('Error starting scanner: ' + err.message);
+            }
+        }
+
+        async function stopScanner() {
+            if (html5QrcodeScanner && isScanning) {
+                try {
+                    await html5QrcodeScanner.stop();
+                    isScanning = false;
+                    startButton.style.display = 'inline-block';
+                    stopButton.style.display = 'none';
+                } catch (err) {
+                    console.error('Error stopping scanner:', err);
+                }
+            }
+        }
+
+        startButton.addEventListener('click', startScanner);
+        stopButton.addEventListener('click', stopScanner);
+
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden && isScanning) {
+                stopScanner();
+            }
+        });
+    </script>
+</body>
+</html>
