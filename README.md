@@ -7,7 +7,6 @@ ShitTicket is a streamlined event ticketing platform designed for simplicity and
 - **Secure Payments**: Integrated Stripe payment processing
 - **QR Ticket System**: Automatically generated QR codes for each ticket
 - **Mobile Scanner**: Built-in QR scanner for easy ticket validation
-- **Event Management**: Track ticket sales and validate entries
 
 Perfect for small to medium events where you need a simple, reliable ticketing solution.
 
