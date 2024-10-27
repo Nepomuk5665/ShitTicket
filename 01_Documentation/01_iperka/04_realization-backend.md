@@ -250,3 +250,44 @@ await admin.firestore().collection('purchased_tickets').doc(ticketId).set({
 ## Code Sources
 - [QRCode Package](https://www.npmjs.com/package/qrcode)
 - [Firebase Storage](https://firebase.google.com/docs/storage)
+
+# QR Code Scanner [issue #34](https://github.com/Nepomuk5665/ShitTicket/issues/34)
+
+## Implementation
+```javascript
+const html5QrcodeScanner = new Html5Qrcode("reader");
+const config = {
+    fps: 10,
+    qrbox: 250,
+    aspectRatio: 1.0
+};
+```
+
+https://github.com/user-attachments/assets/a48cef4c-1f02-41ab-90e4-05099cb34347
+
+
+## Validation Process
+```javascript
+const ticketData = JSON.parse(qrData);
+if (ticketInfo.used) {
+    throw new Error("Ticket already used");
+}
+await updateDoc(doc(db, "purchased_tickets"), {
+    used: true,
+    usedAt: new Date()
+});
+```
+
+
+## Problems & Solutions
+1. iOS Camera Issues:
+   - We were not able to fix that one
+
+2. Multiple Scans:
+   - Added scan cooldown
+   - Source: [QR Scanner Options](https://scanapp.org/html5-qrcode-docs/docs/apis/configurations)
+
+## Code Sources
+- [HTML5 QR Code](https://github.com/mebjas/html5-qrcode)
+- [Camera API](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia)
+
