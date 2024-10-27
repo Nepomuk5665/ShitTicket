@@ -29,14 +29,17 @@ We came up with **shitticket.ch** because selling tickets for small events was e
 
 ## Project Goals
 * **Website Development:** We’ll have a working platform by **29 October 2024** that lets users create and share tickets.
+* **Website sales:** We'll have at least 10 users on our website.  
 * **Market Validation:** We’ll launch with a few small events to test if people like it.
 
 ## Tools for Project Execution
 * **GitHub:** We’re using it for version control and collaboration.
-* **Hostinger:** For hosting and buying the domain.
-* **Stripe:** For easy payment processing.
+* **Hostinger:** For hosting and buying the domain. It also provides a “home” for your website files on the internet so anyone can visit your site.
+* **Stripe:** For easy payment processing. A middleman that securely moves money from a customer’s bank account or credit card to a business’s account when someone buys something online.
 * **VS Code:** For coding the site.
 * **Firebase:** To manage the database and backend.
+* **Figma:** A website where you can design your website with others in real time.
+* **Miro** An online whiteboard tool for team collaboration. To create, share, and brainstorm ideas on a digital canvas with others, using sticky notes, diagrams, and drawings.
 
 ---
 
