@@ -86,3 +86,44 @@ Code from: [Stripe Checkout Guide](https://stripe.com/docs/checkout/quickstart)
 - [Stripe Quickstart](https://stripe.com/docs/checkout/quickstart)
 - [Error Handling Guide](https://stripe.com/docs/error-handling)
 - [Web Integration Guide](https://stripe.com/docs/payments/accept-a-payment?platform=web)
+
+
+
+# Event Link Creation [issue #16](https://github.com/Nepomuk5665/ShitTicket/issues/16)
+
+## Implementation
+1. Created form to collect event details:
+<img width="1727" alt="Screenshot 2024-10-27 at 3 06 51 PM" src="https://github.com/user-attachments/assets/2830ef00-0904-4533-bfff-1fb92f6d0629">
+
+```html
+<form id="createTicketForm">
+    <input type="text" id="eventName" placeholder="Event name" required>
+    <input type="number" id="price" step="0.01" placeholder="Price" required>
+    <input type="number" id="maxPeople" placeholder="Maximum people" required>
+</form>
+```
+
+2. After submission, generate unique link:
+<img width="1728" alt="Screenshot 2024-10-27 at 3 07 40 PM" src="https://github.com/user-attachments/assets/d46d0ff7-e6f4-4c86-aa5e-2ae33b82a7f3">
+
+```javascript
+const ticketDoc = await addDoc(collection(db, "tickets"), {
+    eventName: document.getElementById('eventName').value,
+    price: parseFloat(document.getElementById('price').value),
+    maxPeople: parseInt(document.getElementById('maxPeople').value),
+    userId: auth.currentUser.uid
+});
+
+const ticketLink = `${window.location.origin}/buyticket.html?id=${ticketDoc.id}`;
+```
+
+## Problems & Solutions
+1. Wrong URL format:
+   - Fixed using `window.location.origin` ([URL Guide](https://developer.mozilla.org/en-US/docs/Web/API/URL))
+
+2. Anyone could create events:
+   - Added user authentication check ([Firebase Auth](https://firebase.google.com/docs/auth/web/manage-users))
+
+## Code Sources
+- [Firebase Add Data](https://firebase.google.com/docs/firestore/manage-data/add-data)
+- [URL Parameters](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams)
