@@ -127,3 +127,46 @@ const ticketLink = `${window.location.origin}/buyticket.html?id=${ticketDoc.id}`
 ## Code Sources
 - [Firebase Add Data](https://firebase.google.com/docs/firestore/manage-data/add-data)
 - [URL Parameters](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams)
+
+
+# Firebase Rules Implementation [issue #15](https://github.com/Nepomuk5665/ShitTicket/issues/15)
+
+## Setup
+<img width="1728" alt="Screenshot 2024-10-27 at 3 13 10 PM" src="https://github.com/user-attachments/assets/cdafcea4-5f92-4adf-9b30-b095325b8e53">
+
+Rules implemented:
+```javascript
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /tickets/{ticketId} {
+      allow read: if true;
+      allow create: if request.auth != null;
+      allow update, delete: if request.auth != null && resource.data.userId == request.auth.uid;
+    }
+    match /users/{userId} {
+      allow read: if true;
+      allow write: if request.auth != null && request.auth.uid == userId;
+    }
+    match /purchased_tickets/{ticketId} {
+      allow read: if true;
+      allow create: if request.auth != null;
+      allow update: if request.auth != null && 
+        get(/databases/$(database)/documents/tickets/$(resource.data.eventId)).data.userId == request.auth.uid;
+    }
+  }
+}
+```
+
+## Problems & Solutions
+1. Missing Permissions Error:
+   - Problem: Couldn't update tickets
+   - Fixed by checking user ID ([Rules Guide](https://firebase.google.com/docs/firestore/security/rules-conditions))
+
+2. Scanner Access:
+   - Problem: Scanner couldn't validate tickets
+   - Added read permissions for purchased tickets
+
+## Code Sources
+- [Firebase Rules Basic](https://firebase.google.com/docs/rules/basics)
+- [Rules Conditions](https://firebase.google.com/docs/firestore/security/rules-conditions)
