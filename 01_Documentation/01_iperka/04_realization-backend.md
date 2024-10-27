@@ -288,3 +288,35 @@ await updateDoc(doc(db, "purchased_tickets"), {
 - [HTML5 QR Code](https://github.com/mebjas/html5-qrcode)
 - [Camera API](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia)
 
+# Firebase Connection Setup [issue #3](https://github.com/Nepomuk5665/ShitTicket/issues/3)
+
+## Implementation
+1. Firebase config in firebase-init.js:
+<img width="1728" alt="image" src="https://github.com/user-attachments/assets/da20c50e-95a8-4c4d-ac46-dc2f5af4f5e2">
+
+```javascript
+const firebaseConfig = {
+  apiKey: "AIzaSyAJwbMAKUX2i1JWhcIpHr_SlrNgLKZTtX8",
+  authDomain: "shitticket-5665.firebaseapp.com",
+  projectId: "shitticket-5665",
+  storageBucket: "shitticket-5665.appspot.com",
+  messagingSenderId: "736779061282",
+  appId: "1:736779061282:web:e19dd020bb473f0a2d227b"
+};
+```
+
+2. Connection in HTML:
+```javascript
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+```
+
+## Problems & Solutions
+1. CORS Issues:
+   - Fixed Firebase rules
+   - Source: [Firebase Access](https://firebase.google.com/docs/rules)
+
+## Code Sources
+- [Firebase Setup](https://firebase.google.com/docs/web/setup)
+- [Module Import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
+
