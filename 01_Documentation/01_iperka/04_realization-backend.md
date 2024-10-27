@@ -14,7 +14,8 @@
 
    ![Google Analytics abwählen](https://github.com/user-attachments/assets/2af1cdc2-fc0f-4003-983c-cc422ebe1187)
 
-4. Finally, I reached a screen, confirming that Firebase has been successfully set up for the database.
+4. Finally, I reached this screen, confirming that Firebase has been successfully set up for the database.
 
+<img width="1188" alt="Screenshot 2024-10-27 at 2 30 39 PM" src="https://github.com/user-attachments/assets/a65093b9-f099-4196-8dec-5fe4a9d84c46">
 
 
