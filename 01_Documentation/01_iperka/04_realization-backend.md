@@ -170,3 +170,39 @@ service cloud.firestore {
 ## Code Sources
 - [Firebase Rules Basic](https://firebase.google.com/docs/rules/basics)
 - [Rules Conditions](https://firebase.google.com/docs/firestore/security/rules-conditions)
+
+
+# Firebase Hosting Setup [issue #33](https://github.com/Nepomuk5665/ShitTicket/issues/33)
+
+## Hosting Steps
+1. Initialized Firebase hosting:
+```bash
+firebase init hosting
+```
+
+
+2. Uploaded files:
+```bash
+firebase deploy
+```
+<img width="1728" alt="Screenshot 2024-10-27 at 3 32 26 PM" src="https://github.com/user-attachments/assets/1cae5dd6-fa03-469b-b001-9b6179d631e0">
+
+
+## DNS Configuration
+1. Added records in Hostinger:
+<img width="1725" alt="Screenshot 2024-10-27 at 3 21 40 PM" src="https://github.com/user-attachments/assets/f8c529fb-6dcb-42d8-a916-4d60dbd84e7c">
+
+```
+Type: A
+Name: shitticket.ch
+Value: 199.36.158.100
+
+Type: TXT
+Name: shitticket.ch
+Value: hosting-site=shitticket-5665
+```
+
+
+## Code Sources
+- [Firebase Hosting](https://firebase.google.com/docs/hosting)
+- [Custom Domains](https://firebase.google.com/docs/hosting/custom-domain)
