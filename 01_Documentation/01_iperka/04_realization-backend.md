@@ -206,3 +206,47 @@ Value: hosting-site=shitticket-5665
 ## Code Sources
 - [Firebase Hosting](https://firebase.google.com/docs/hosting)
 - [Custom Domains](https://firebase.google.com/docs/hosting/custom-domain)
+
+
+# QR Code Generation [issue #35](https://github.com/Nepomuk5665/ShitTicket/issues/35)
+
+## Implementation
+1. Check payment & generate QR code:
+```javascript
+const qrData = {
+    ticketId: ticketId,
+    eventId: session.metadata.ticketId,
+    purchaseDate: new Date().toISOString()
+};
+
+const qrCodeUrl = await QRCode.toDataURL(JSON.stringify(qrData));
+```
+
+
+
+2. Store in Firebase:
+```javascript
+await admin.firestore().collection('purchased_tickets').doc(ticketId).set({
+    qrCode: qrCodeUrl,  // base64 string
+    used: false,
+    eventId: session.metadata.ticketId
+});
+```
+<img width="1413" alt="image" src="https://github.com/user-attachments/assets/32b9fd67-6a22-4009-a0fd-d8d50804b76b">
+
+3. Show it on the screen
+<img width="1728" alt="Screenshot 2024-10-27 at 3 57 20 PM" src="https://github.com/user-attachments/assets/85e3e169-0ea6-4854-9a71-751fb02cf95d">
+
+## Problems & Solutions
+1. QR Code too large:
+   - Problem: Base64 string too long
+   - Fixed by compressing data
+   - Source: [QRCode npm](https://www.npmjs.com/package/qrcode)
+
+2. Payment Verification:
+   - Added Stripe session check
+   - Source: [Stripe Sessions](https://stripe.com/docs/payments/checkout/fulfill-orders)
+
+## Code Sources
+- [QRCode Package](https://www.npmjs.com/package/qrcode)
+- [Firebase Storage](https://firebase.google.com/docs/storage)
