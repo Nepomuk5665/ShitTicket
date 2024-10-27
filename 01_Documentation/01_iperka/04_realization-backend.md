@@ -18,4 +18,4 @@
 
    ![Setup abgeschlossen](https://github.com/user-attachments/assets/Screenshot 2024-09-24 at 14.21.08.png)
 
-With that, I have successfully resolved [issue #17](https://github.com/Nepomuk5665/ShitTicket/issues/17).
+
