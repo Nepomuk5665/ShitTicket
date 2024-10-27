@@ -79,8 +79,6 @@ Code from: [Stripe Checkout Guide](https://stripe.com/docs/checkout/quickstart)
 - Success: 4242 4242 4242 4242
 - [More test cards](https://stripe.com/docs/testing)
 
-![Uploading Screenshot 2024-10-27 at 2.58.05 PM.png…]()
-
 
 
 ## Key Resources
