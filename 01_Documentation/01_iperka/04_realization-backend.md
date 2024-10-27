@@ -283,9 +283,6 @@ await updateDoc(doc(db, "purchased_tickets"), {
 1. iOS Camera Issues:
    - We were not able to fix that one
 
-2. Multiple Scans:
-   - Added scan cooldown
-   - Source: [QR Scanner Options](https://scanapp.org/html5-qrcode-docs/docs/apis/configurations)
 
 ## Code Sources
 - [HTML5 QR Code](https://github.com/mebjas/html5-qrcode)
