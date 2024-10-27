@@ -1,6 +1,6 @@
 # Backend Realization
 
-#[issue #17](https://github.com/Nepomuk5665/ShitTicket/issues/17)
+# [issue #17](https://github.com/Nepomuk5665/ShitTicket/issues/17)
 
 1. First, I visited the [Firebase Console](https://console.firebase.google.com/) and created a new project.
 
