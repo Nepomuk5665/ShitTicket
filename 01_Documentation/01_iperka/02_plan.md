@@ -16,6 +16,7 @@
 
 ### Resource Plan
 * @tbz-neil-devlin set the project deadline for **29 October 2024** and established a timeline from **27 August 2024** onward.
+* We have a total period of 180 hours. 
 * Based on the schedule in **[ShitTicket/01_Documentation/03_timeTable.csv](https://github.com/Nepomuk5665/ShitTicket/blob/main/01_Documentation/03_timeTable.csv)**, we allocated work across the team (Nepomuk and Inaam) based on availability in the mornings, afternoons, and evenings.
   * **N = Nepomuk**
   * **I = Inaam**
@@ -36,7 +37,11 @@
   * **Actual effort**: How long it actually took.
 
 ### Milestones
-We created six major milestones for the project:
+We created three major milestones for the project: 
+* **Backend**
+* **Combine Front and Backend**
+* **Frontend**
+#### These are the important milestones described in more detail in six topics:
 1. **Setting up Firebase and authentication**
 2. **Integrating Stripe for payments**
 3. **Front-end design completion (via Figma)**
@@ -48,6 +53,7 @@ We created six major milestones for the project:
 * We created a list of tasks and assigned them based on their relevance to each milestone.
 * Each task includes an estimate of how long it will take, with start and due dates.
 * Tasks include setting up Firebase, implementing Stripe, and developing the front-end UI in line with the design from **Figma**.
+* We first created our to do list on Microsoft To Do, but then we decided to transfer the whole to do list to Github. 
 * Example tasks:
   * Set up Firebase AppCheck for secure data handling.
   * Integrate Stripe for secure payments.
@@ -55,6 +61,7 @@ We created six major milestones for the project:
 * GitHub to do list:
 ![GitHub Issues To-Do List](https://github.com/user-attachments/assets/1a012d85-7026-44cf-9009-38760136abc3)
 * Microsoft to do list:
+* Since we found it easier and more practical to use only one of the To Do lists, we decided to use only the To Do list in Github. 
 ![Microsoft To-Do List](https://github.com/user-attachments/assets/9edb3ae8-4fb4-4060-89e4-fb49ea28569b)
 
 ### Task Management
