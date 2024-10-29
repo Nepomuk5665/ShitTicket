@@ -26,7 +26,7 @@ All code is available in our [GitHub repository](https://github.com/Nepomuk5665/
 ### [IPERKA](https://github.com/Nepomuk5665/ShitTicket/tree/main/01_Documentation/01_iperka)
 - [Inform](https://github.com/Nepomuk5665/ShitTicket/blob/main/01_Documentation/01_IPERKA/01_Inform/inform.md)
 - [Plan](https://github.com/Nepomuk5665/ShitTicket/blob/main/01_Documentation/01_IPERKA/02_Plan/plan.md)
-- [Decide](https://github.com/Nepomuk5665/ShitTicket/tree/main/01_Documentation/01_IPERKA/03_decide)
+- [Decide](https://github.com/Nepomuk5665/ShitTicket/blob/main/01_Documentation/01_IPERKA/03_decide/decide.md)
 - [Realization backend](https://github.com/Nepomuk5665/ShitTicket/blob/main/01_Documentation/01_IPERKA/04_Realization/03_realization-backend.md)
 - [Realization frontend](https://github.com/Nepomuk5665/ShitTicket/blob/main/01_Documentation/01_IPERKA/04_Realization/02_realization-frontend.md)
 - [Realization design](https://github.com/Nepomuk5665/ShitTicket/blob/main/01_Documentation/01_IPERKA/04_Realization/01_realization-design.md)
