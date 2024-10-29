@@ -153,7 +153,7 @@ exports.stripeWebhook = functions
                 const session = event.data.object;
                 console.log('Payment successful for session:', session.id);
 
-                // Add payment to your database
+                // Add payment to our database
                 await admin.firestore().collection('payments').doc(session.id).set({
                     ticketId: session.metadata.ticketId,
                     customerEmail: session.customer_email,

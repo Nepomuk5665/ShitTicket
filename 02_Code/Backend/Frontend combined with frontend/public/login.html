@@ -35,30 +35,36 @@
     </div>
 
     <script type="module">
+        // Import required Firebase functions
         import { auth, db, signInWithEmailAndPassword, doc, getDoc } from './firebase-init.js';
-
+        
+        // Handle login form submission
         document.getElementById('loginForm').addEventListener('submit', async (e) => {
             e.preventDefault();
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
             const errorMessage = document.getElementById('error-message');
-
+        
             try {
+                // Try to login with Firebase
                 const userCredential = await signInWithEmailAndPassword(auth, email, password);
                 const user = userCredential.user;
-
+        
+                // Check if user is banned
                 const userDoc = await getDoc(doc(db, "users", user.uid));
                 if (userDoc.exists() && userDoc.data().isBanned) {
-                    await auth.signOut();
+                    await auth.signOut();  // Log out banned users immediately
                     errorMessage.textContent = "This account has been banned.";
                     return;
                 }
-
+                
+                // If not banned, redirect to ticket creation page
                 window.location.href = 'create-ticket.html';
             } catch (error) {
                 errorMessage.textContent = "Invalid email or password.";
             }
         });
-    </script>
+        </script>
+        
 </body>
 </html>

@@ -106,13 +106,16 @@
     <audio id="successSound" src="sound.mp3" preload="auto"></audio>
 
     <script type="module">
+        // Import Firebase functions we need
         import { auth, db, doc, getDoc, updateDoc } from './firebase-init.js';
         import { signInWithEmailAndPassword, signOut } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
 
-        let html5QrcodeScanner = null;
-        let isScanning = false;
-        let isProcessing = false;
+        // Main variables to control scanner state
+        let html5QrcodeScanner = null;  // Stores the QR scanner object
+        let isScanning = false;         // Tracks if we're currently scanning
+        let isProcessing = false;       // Prevents multiple scans at once
 
+        // Get all HTML elements we need to work with
         const loginForm = document.getElementById('loginForm');
         const loginContainer = document.getElementById('loginContainer');
         const scannerControls = document.getElementById('scannerControls');
@@ -125,44 +128,53 @@
         const successSound = document.getElementById('successSound');
         const readerDiv = document.getElementById('reader');
 
-        // Preload sound
+        // Load success sound right away so it's ready when needed
         successSound.load();
 
+        // Listen for changes in login status
         auth.onAuthStateChanged((user) => {
             if (user) {
+                // If user is logged in, show their email and logout button
                 authStatus.innerHTML = `
                     Logged in as: ${user.email}
                     <br>
                     <button onclick="window.logout()">Logout</button>
                 `;
+                // Show scanner controls and hide login form
                 loginContainer.style.display = 'none';
                 scannerControls.style.display = 'block';
             } else {
+                // If not logged in, show login form and hide scanner
                 authStatus.textContent = 'Not logged in';
                 loginContainer.style.display = 'block';
                 scannerControls.style.display = 'none';
+                // Stop scanner if it's running
                 if (html5QrcodeScanner) {
                     stopScanner();
                 }
             }
         });
 
+        // Handle login form submission
         loginForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            loginError.textContent = '';
+            loginError.textContent = '';  // Clear any old errors
             
             try {
+                // Try to log in with Firebase
                 await signInWithEmailAndPassword(
                     auth,
                     loginForm.email.value,
                     loginForm.password.value
                 );
-                loginForm.reset();
+                loginForm.reset();  // Clear form after successful login
             } catch (error) {
+                // Show error if login fails
                 loginError.textContent = error.message;
             }
         });
 
+        // Make logout function available globally
         window.logout = async () => {
             try {
                 await signOut(auth);
@@ -171,49 +183,58 @@
             }
         };
 
+        // Function to scan another ticket
         window.scanAnother = async () => {
-            resultContainer.style.display = 'none';
-            await startScanner();
+            resultContainer.style.display = 'none';  // Hide old result
+            await startScanner();  // Start new scan
         };
 
+        // Main function to check if a ticket is valid
         async function validateTicket(qrData) {
+            // Make sure user is logged in
             if (!auth.currentUser) {
                 throw new Error("Please login first");
             }
 
             try {
+                // Convert QR code data from string to JSON object
                 const ticketData = JSON.parse(qrData);
                 
+                // Step 1: Get ticket information from database
                 const ticketDoc = await getDoc(doc(db, "purchased_tickets", ticketData.ticketId));
                 if (!ticketDoc.exists()) {
                     throw new Error("Ticket not found");
                 }
-
                 const ticketInfo = ticketDoc.data();
 
+                // Step 2: Get event information from database
                 const eventDoc = await getDoc(doc(db, "tickets", ticketInfo.eventId));
                 if (!eventDoc.exists()) {
                     throw new Error("Event not found");
                 }
-
                 const eventInfo = eventDoc.data();
 
+                // Step 3: Check if current user can scan tickets for this event
                 if (eventInfo.userId !== auth.currentUser.uid) {
                     throw new Error("You don't have permission to scan tickets for this event");
                 }
 
+                // Step 4: Check if ticket has already been used
                 if (ticketInfo.used) {
                     throw new Error("This ticket has already been used!");
                 }
 
+                // Step 5: Mark ticket as used in database
                 await updateDoc(doc(db, "purchased_tickets", ticketData.ticketId), {
                     used: true,
                     usedAt: new Date().toISOString(),
                     scannedBy: auth.currentUser.email
                 });
 
+                // Play success sound
                 await successSound.play();
 
+                // Step 6: Show success message with ticket details
                 resultContainer.className = 'result-container success';
                 resultContainer.innerHTML = `
                     <h3>✓ Valid Ticket!</h3>
@@ -233,17 +254,20 @@
             }
         }
 
+        // Function that runs every time a QR code is detected
         async function onScanSuccess(decodedText) {
+            // Don't process if we're not in scanning mode or already processing
             if (!isScanning || isProcessing || !auth.currentUser) return;
             
             try {
-                isProcessing = true;
-                readerDiv.style.display = 'none';
-                loadingDiv.style.display = 'block';
+                isProcessing = true;  // Prevent multiple scans
+                readerDiv.style.display = 'none';  // Hide scanner
+                loadingDiv.style.display = 'block';  // Show loading message
                 
-                await validateTicket(decodedText);
+                await validateTicket(decodedText);  // Check if ticket is valid
                 
             } catch (error) {
+                // Show error message if ticket is invalid
                 resultContainer.className = 'result-container error';
                 resultContainer.innerHTML = `
                     <h3>Invalid Ticket</h3>
@@ -252,12 +276,14 @@
                 `;
                 resultContainer.style.display = 'block';
             } finally {
+                // Clean up regardless of success or failure
                 loadingDiv.style.display = 'none';
                 await stopScanner();
                 isProcessing = false;
             }
         }
 
+        // Function to start the QR scanner
         async function startScanner() {
             if (!auth.currentUser) {
                 alert('Please login first');
@@ -265,9 +291,12 @@
             }
 
             try {
+                // Get list of available cameras
                 const cameras = await Html5Qrcode.getCameras();
                 if (cameras && cameras.length) {
-                    let selectedCamera = cameras[0].id;
+                    let selectedCamera = cameras[0].id;  // Default to first camera
+                    
+                    // Try to find back camera for better scanning
                     const backCamera = cameras.find(camera => 
                         camera.label.toLowerCase().includes('back') || 
                         camera.label.toLowerCase().includes('rear') ||
@@ -277,23 +306,27 @@
                         selectedCamera = backCamera.id;
                     }
 
+                    // Clear old scanner if it exists
                     if (html5QrcodeScanner) {
                         await html5QrcodeScanner.clear();
                     }
 
+                    // Create new scanner
                     html5QrcodeScanner = new Html5Qrcode("reader");
                     readerDiv.style.display = 'block';
                     
+                    // Start scanning
                     await html5QrcodeScanner.start(
                         selectedCamera,
                         {
-                            fps: 10,
-                            qrbox: 250
+                            fps: 10,        // Scan 10 frames per second
+                            qrbox: 250      // Scanner box size
                         },
-                        onScanSuccess,
-                        () => {}
+                        onScanSuccess,      // What to do when QR found
+                        () => {}            // What to do when no QR found (nothing)
                     );
                     
+                    // Update UI to show scanner is running
                     isScanning = true;
                     startButton.style.display = 'none';
                     stopButton.style.display = 'inline-block';
@@ -306,11 +339,13 @@
             }
         }
 
+        // Function to stop the QR scanner
         async function stopScanner() {
             if (html5QrcodeScanner && isScanning) {
                 try {
                     await html5QrcodeScanner.stop();
                     isScanning = false;
+                    // Update UI to show scanner is stopped
                     startButton.style.display = 'inline-block';
                     stopButton.style.display = 'none';
                 } catch (err) {
@@ -319,9 +354,11 @@
             }
         }
 
+        // Set up button click handlers
         startButton.addEventListener('click', startScanner);
         stopButton.addEventListener('click', stopScanner);
 
+        // Stop scanner when user switches tabs or minimizes window
         document.addEventListener('visibilitychange', () => {
             if (document.hidden && isScanning) {
                 stopScanner();
