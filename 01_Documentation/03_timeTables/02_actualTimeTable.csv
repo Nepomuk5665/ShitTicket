@@ -1,9 +1,43 @@
-﻿,Day,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,
-,Date,12.09.2024,13.09.2024,14.09.2024,15.09.2024,16.09.2024,17.09.2024,18.09.2024,19.09.2024,20.09.2024,21.09.2024,22.09.2024,23.09.2024,24.09.2024,25.09.2024,26.09.2024,27.09.2024,28.09.2024,29.09.2024,30.09.2024,01.10.2024,02.10.2024,03.10.2024,04.10.2024,05.10.2024,06.10.2024,07.10.2024,08.10.2024,09.10.2024,10.10.2024,11.10.2024,12.10.2024,13.10.2024,14.10.2024,15.10.2024,16.10.2024,17.10.2024,18.10.2024,19.10.2024,20.10.2024,21.10.2024,22.10.2024,23.10.2024,24.10.2024,25.10.2024,26.10.2024,27.10.2024,28.10.2024,29.10.2024,
-,Morning,,,,,,N,N,,,,,,N,N,,,,,,N,N,,,,,,N,N,,,,,,N,N,,,,,,N,N,,,,,,N,
-,Afternoon,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,Evening,,N+I,I,I,N+I,,,N+I,N+I,I,I,N+I,,,N+I,N+I,I,I,N+I,,,N+I,N+I,I,I,N+I,,,N+I,N+I,I,I,N+I,,,N+I,N+I,I,I,N+I,,,N+I,N+I,I,I,N+I,,
-,Total,,6,3,3,6,3,3,6,6,3,3,6,3,3,6,6,3,3,6,3,3,6,6,3,3,6,3,3,6,6,3,3,6,3,3,6,6,3,3,6,3,3,6,6,3,3,6,3,201
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-N=Nepomuk,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-I=Inaam,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Week,Date,Who,Hours,Task,Issue,Note
+1,12.09.2024,I,1,Design Logo,#22,
+1,13.09.2024,I,6,Design UI mockups in Figma,#2,
+1,14.09.2024,N,5,Setup Firebase initial configuration,#17,
+1,15.09.2024,I,4,Create homepage design,#24,
+1,17.09.2024,N+I,2,Weekly review meeting - Closed #22 & #24,,Logo and homepage approved
+2,19.09.2024,N,6,Implement Firebase rules,#15,
+2,20.09.2024,I,5,Create sign-up page frontend,#26,
+2,21.09.2024,I,4,Create sign-in page frontend,#25,
+2,22.09.2024,N,6,Setup Firebase authentication,#28,
+2,24.09.2024,N+I,2,Weekly review meeting - Closed #26 & #25,,Auth pages completed and tested
+3,26.09.2024,N,5,Implement Firebase AppCheck,#14,until I figured out that there is no web version for firebase AppCheck
+3,27.09.2024,I,6,Design buy ticket page,#23,
+3,28.09.2024,N,2,Program Firebase rules,#15,
+3,29.09.2024,N+I,8,Connect frontend with backend,#3,
+3,01.10.2024,N+I,2,Weekly review meeting - Closed #14 & #23,,Security features implemented
+4,03.10.2024,N,5,Stripe payment integration start,#18,
+4,04.10.2024,N,8,Continue Stripe implementation,#18,
+4,05.10.2024,N+I,6,Test payment flow,#18,
+4,06.10.2024,N,8,QR code generation system,#35,
+4,08.10.2024,N+I,2,Weekly review meeting - Closed #18,,Payment system working
+5,10.10.2024,N,10,Create QR scanner functionality,#34,
+5,11.10.2024,N+I,8,Test QR scanning,#34,
+5,12.10.2024,N,6,Fix scanner issues,#34,
+5,13.10.2024,N,8,Money separation system,#13,
+5,15.10.2024,N+I,2,Weekly review meeting - Closed #34 & #35,,QR system operational
+6,17.10.2024,N,5,Firebase hosting setup,#33,
+6,18.10.2024,N+I,8,Test hosted website,#33,
+6,19.10.2024,N,6,Fix hosting issues,#33,
+6,20.10.2024,N+I,8,Integration testing,Multiple,
+6,22.10.2024,N+I,2,Weekly review meeting - Closed #33 & #3,,Website live and connected
+7,24.10.2024,N+I,6,Documentation updates,#27/#29,
+7,25.10.2024,N,6,Final bug fixes,Multiple,
+7,26.10.2024,N+I,6,Final testing,Multiple,
+7,27.10.2024,N,4,README updates,#29,
+7,29.10.2024,N+I,2,Final review meeting - Closed remaining issues,,Project completion review
+Total,,Both,180,,,
+,,,,,,
+Legend:,,,,,,
+N = Nepomuk,,,,,,
+I = Inaam,,,,,,
+N+I = Both working together,,,,,,
+Weekly Review = Every Tuesday we met to check progress and close completed issues,,,,,,
