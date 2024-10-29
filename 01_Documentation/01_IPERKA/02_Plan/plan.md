@@ -10,7 +10,7 @@
 ### Resource Plan
 * @tbz-neil-devlin set the project deadline for **29 October 2024** and established a timeline from **27 August 2024** onward.
 * We have a total period of 201 hours. 
-* Based on the schedule in **[ShitTicket/01_Documentation/03_timeTable.csv](https://github.com/Nepomuk5665/ShitTicket/blob/main/01_Documentation/03_timeTable.csv)**, we allocated work across the team (Nepomuk and Inaam) based on availability in the mornings, afternoons, and evenings.
+* Based on the schedule in **[ShitTicket/01_Documentation/03_timeTable.csv](https://github.com/Nepomuk5665/ShitTicket/blob/main/01_Documentation/03_timeTables/01_timeTable.csv)**, we allocated work across the team (Nepomuk and Inaam) based on availability in the mornings, afternoons, and evenings.
   * **N = Nepomuk**
   * **I = Inaam**
 * We calculated the available hours and made sure they align with the work estimates.
@@ -58,6 +58,15 @@
 ### Visuals
 * **Miro board**: Contains the data structure and workflow sketch.
 * **Figma UI Design**: Shows the layout and design of the user interface.
+
+### Timeline
+1. Week 1: Design website
+2. Week 2: Build basic pages
+3. Week 3: Add Stripe payments
+4. Week 4: Create QR system
+5. Week 5: Test everything
+6. Week 6: Fix problems
+7. Week 7: Launch website
 
 ---
 

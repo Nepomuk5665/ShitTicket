@@ -30,6 +30,12 @@ Firebase success log:
 [Stripe](https://dashboard.stripe.com/workbench/logs#wb-N4Igdghgbglg5hALjA9mEAuUBjArgJ3wFMxEAlFXRIzUSAWxoxAHUB5MgaQCEBRAOQDCACQD6AGTYBxAMogANCAAOEfBHoBnWgF9FGoquwALHXoP5jMiADMmwXSCMQNJ5iAcAbJEQ3lK1LSwQFCgifFgiAHdacHUmVg4eARFRNgA1XjI0gEleFndFABMfZEhkNEC6OMwErj4hMRZebmE2Nk45ByJQ0krYxhr2OuSxXgz+ABVOxQ8UOD6GeKGkholpOUUVNU1TEH1DV3szA6tbXacXGoLHAw9EQ-6lxPqU4V4AQXEJ4Wuw-BR8Atqsxli9RmQyBxpiBiqFZkowtkwBp4EZEECBiDniNRNl+DJslJhFNrjBkQjsIgATFFoNsas8TIAAq8QQTDjXDTqJQeHw04G1FYpGTvACyTPEvGhLiIHg8-MxgrBohkb3E4mu2GI3gAIiUyUhUGAWDAAF6qQoKp7DVZNFptDqiQRkD4TXjXSKy7AoTFVRWgnFNcSCNii90OfSIUrzK10m3C3gTCZ42TXALRmTYEiqVAY61CsRumTJ-hSFWCATvMjZNidBwQSkwUITCAAIxqsxjikQbeEMF8AIAnpgANrBULhGBREAAXUU-yoRD7A-ww4wI798R171V3DYVZ1CmUqnUlQj5mMu32FiMpzsDgurhABU3cYLa1TmxPOyw54OV4vW8bHvRRHyubQZwjM0yTgGp6AgAAPGB6DNIhLVAohUUQTAACYAFYAAZFFgFFWxgDwYEQQdRRQYoahImBW15I9Oz6axyOoQEYkYe5aNHZQUF8I9il5ahZyKGBiEbNAYm9MAwCISlRDJTBEHwXAiEUOSFKU-xMGsCAPH0MwPGsVT1KICNKAsOwQAgJQYHMjSimcIxWxQC0nMsrTtWoS0gjuJgAEYAHYAGYCJwoKABYcIADmigiku0c9eUpNDxDmGpiAAR1EKQACslE4egADY4AAKQAVTIGBRQAMQQljkMo3CCJSoA) success log:
 ![image](https://github.com/user-attachments/assets/3b87ee0c-5ccc-445a-8d9b-5509ca0938df)
 
+## additional requirements testing:
+![Screenshot 2024-10-29 162726](https://github.com/user-attachments/assets/221a2c26-6352-4199-a995-58af74f7cd3f)
+![Screenshot 2024-10-29 162920](https://github.com/user-attachments/assets/08a54b9a-58bb-427b-802a-b65f83d68bf6)
+![Screenshot 2024-10-29 163111](https://github.com/user-attachments/assets/910e974e-13cb-475f-b5ba-c89837938c86)
+![Screenshot 2024-10-29 163032](https://github.com/user-attachments/assets/958abfd5-ebaf-463e-9b89-c22c0b3fa29d)
+
 
 ## Documentation Verification
 All documentation sections completed and verified:

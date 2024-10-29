@@ -31,24 +31,15 @@ We want to build shitticket.ch because small event organizers have problems with
 ## Basic requirements:
 ![Screenshot 2024-10-29 094456](https://github.com/user-attachments/assets/b96d1a64-e000-44e0-b168-c90b3bed6b72)
 
+## Additional requirements
+* User must enter password
+* User can only sign up once with one e-mail
+* user cannot create an event without filling out the create form
 
 ## Project Goals
 * Make website work by **29 October 2024**
 * Get 10 people to sign up in one month
 * Make sure money goes to right people
-
-## Additional Project Goals
-* User must enter password
-* User can only sign up once with one e-mail
-* user cannot create an event without filling out the create form
-* A ticket must cost at least 0.5 francs
-
-![Screenshot 2024-10-29 162726](https://github.com/user-attachments/assets/d8c94a66-3780-485f-931e-517fe341dd24)
-![Screenshot 2024-10-29 162920](https://github.com/user-attachments/assets/73632487-05b7-4e96-9f59-e4f8f442e1ad)
-
-![Screenshot 2024-10-29 163032](https://github.com/user-attachments/assets/1723e027-a376-4842-8cd4-665c96076eda)
-
-
 
 ## Main Features to Build
 1. **Create Events:**
@@ -91,11 +82,3 @@ We want to build shitticket.ch because small event organizers have problems with
 * Write good documentation
 * Add `tbz-neil-devlin` to GitHub
 
-## Timeline
-1. Week 1: Design website
-2. Week 2: Build basic pages
-3. Week 3: Add Stripe payments
-4. Week 4: Create QR system
-5. Week 5: Test everything
-6. Week 6: Fix problems
-7. Week 7: Launch website
