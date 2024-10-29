@@ -30,8 +30,7 @@ We want to build shitticket.ch because small event organizers have problems with
 
 ## Project Goals
 * Make website work by **29 October 2024**
-* Get 10 people to use it
-* Handle at least 5 events successfully
+* Get 10 people to sign up in one month
 * Make sure money goes to right people
 
 ## Main Features to Build
