@@ -32,6 +32,7 @@ All code is available in our [GitHub repository](https://github.com/Nepomuk5665/
 - [Realization design](https://github.com/Nepomuk5665/ShitTicket/blob/main/01_Documentation/01_IPERKA/04_Realization/01_realization-design.md)
 - [Control](https://github.com/Nepomuk5665/ShitTicket/blob/main/01_Documentation/01_IPERKA/05_Control/control.md)
 - [Evaluation](https://github.com/Nepomuk5665/ShitTicket/blob/main/01_Documentation/01_IPERKA/06_assess/assess.md)
+- [Security Documentation](https://github.com/Nepomuk5665/ShitTicket/blob/main/01_Documentation/01_IPERKA/07_security/security.md)
 
 ## Download & Access
 - 🌐 **Live Website**: [shitticket.ch](https://shitticket.ch)
