@@ -31,17 +31,15 @@ We want to build shitticket.ch because small event organizers have problems with
 ## Basic requirements:
 ![Screenshot 2024-10-29 094456](https://github.com/user-attachments/assets/b96d1a64-e000-44e0-b168-c90b3bed6b72)
 
-
-## Project Goals
-* Make website work by **29 October 2024**
-* Get 10 people to sign up in one month
-* Make sure money goes to right people
-
 ## Additional requirements
 * User must enter password
 * User can only sign up once with one e-mail
 * user cannot create an event without filling out the create form
 
+## Project Goals
+* Make website work by **29 October 2024**
+* Get 10 people to sign up in one month
+* Make sure money goes to right people
 
 ## Main Features to Build
 1. **Create Events:**
