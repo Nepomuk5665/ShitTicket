@@ -59,7 +59,7 @@
 * **Miro board**: Contains the data structure and workflow sketch.
 * **Figma UI Design**: Shows the layout and design of the user interface.
 
-## Timeline
+### Timeline
 1. Week 1: Design website
 2. Week 2: Build basic pages
 3. Week 3: Add Stripe payments
