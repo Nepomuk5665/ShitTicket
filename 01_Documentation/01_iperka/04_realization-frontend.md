@@ -76,5 +76,5 @@
 
    # Links:
    [ChatGPT](https://chatgpt.com/)
-
+   [Figma](https://www.figma.com/design/XdHtJ34A3BiF542R21bNlt/Shit-Ticket?node-id=0-1&node-type=canvas&t=mheRb2qq6GXFanSi-0)
    [w3schools](https://www.w3schools.com/html/default.asp)
