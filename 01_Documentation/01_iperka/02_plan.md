@@ -70,9 +70,6 @@ We created four major milestones for the project:
 * Weekly meetings to review and update the task list, ensuring mutual accountability and progress.
 
 
-### Creating a Gantt chart
-We used GitHub Projects to visualize the Gantt chart, mapping out each task over time to ensure we're staying on track with our available hours and milestones.
-
 ### Checking progress
 * We track our progress by comparing **Actual Effort** to the **Estimated Effort** in GitHub's issue tracker.
 * As new tasks arise, we add them to the task list and update the due dates accordingly.
