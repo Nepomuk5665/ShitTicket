@@ -49,7 +49,7 @@ We came up with **shitticket.ch** because selling tickets for small events was e
 
 
 ## Links:
-* [Github]
+* [GitHub]
 * [Miro]
 * [w3schools]
 * 
