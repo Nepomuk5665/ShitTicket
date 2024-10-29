@@ -37,10 +37,11 @@
   * **Actual effort**: How long it actually took.
 
 ### Milestones
-We created three major milestones for the project: 
+We created four major milestones for the project: 
 * **Backend**
 * **Combine Front and Backend**
 * **Frontend**
+* **Documentation**
 #### These are the important milestones described in more detail in six topics:
 1. **Setting up Firebase and authentication**
 2. **Integrating Stripe for payments**
@@ -48,6 +49,7 @@ We created three major milestones for the project:
 4. **Back-end data storage setup**
 5. **Testing and debugging**
 6. **Final deployment on Hostinger**
+7. **Successful completion of the documentation**
 
 ### Task list
 * We created a list of tasks and assigned them based on their relevance to each milestone.
