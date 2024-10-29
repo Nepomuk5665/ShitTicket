@@ -34,7 +34,7 @@ We want to build shitticket.ch because small event organizers have problems with
 ## Additional requirements
 * User must enter right password
 * User can only sign up once with one e-mail
-* user cannot create an event without filling out the form
+* User cannot create an event without filling out the form
 
 ## Project Goals
 * Make website work by **29 October 2024**
