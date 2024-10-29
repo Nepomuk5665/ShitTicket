@@ -35,9 +35,9 @@
 We decided to combine both **Microsoft To Do** and **GitHub Issues** because it scored higher overall and met our needs for both personal and collaborative task management.
 
 ### Criteria
-* **Collaboration ease:** GitHub issues are great for team collaboration, but it’s sometimes hard to manage personal task lists within the same system.
-* **Personal task tracking:** Microsoft To Do allows for easy management of daily tasks on an individual level.
-* **Resource management:** Using only one platform (GitHub) would simplify resource allocation but could become cumbersome for personal tracking.
+* **Collaboration ease:** Which To Do list is easier to use and to manage personal task lists within the same system?
+* **Personal task tracking:** Which To Do list allows for an easier management of daily tasks on an individual level?
+* **Resource management:** Which To Do list has a simpler resource organization and cannot become inconvenient for personal tracking?
 
 ### Scoring
 * 0 = Not present
