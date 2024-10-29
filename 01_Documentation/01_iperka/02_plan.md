@@ -30,19 +30,7 @@
   * **Actual effort**: How long it actually took.
 
 ### Milestones
-We created four major milestones for the project: 
-* **Backend**
-* **Combine Front and Backend**
-* **Frontend**
-* **Documentation**
-#### These are the important milestones described in more detail in six topics:
-1. **Setting up Firebase and authentication**
-2. **Integrating Stripe for payments**
-3. **Front-end design completion (via Figma)**
-4. **Back-end data storage setup**
-5. **Testing and debugging**
-6. **Final deployment on Hostinger**
-7. **Successful completion of the documentation**
+![Screenshot 2024-10-29 152711](https://github.com/user-attachments/assets/21fb219e-71f5-4a09-979e-d468de148103)
 
 ### Task list
 * We created a list of tasks and assigned them based on their relevance to each milestone.
