@@ -70,7 +70,6 @@ Due to time constraints, these issues remain open for future development:
 * Complete test protocol: [Google Sheet](https://docs.google.com/spreadsheets/d/1Z1QQc2RJvuFWbhcTCpFHncJb-vXWN5Jc-3CDtvcGwo0/edit?usp=sharing)
 * All failed tests have corresponding GitHub issues
 * Testing performed across multiple platforms
-* Regular retesting after other fixes
 
 ## Time Constraints
 Due to project deadlines, we were unable to implement fixes for the identified issues. These remain documented in GitHub for future development phases. Total estimated time needed for all fixes: 15-20 hours.
