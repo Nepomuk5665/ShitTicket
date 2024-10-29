@@ -31,9 +31,13 @@ Firebase success log:
 ![image](https://github.com/user-attachments/assets/3b87ee0c-5ccc-445a-8d9b-5509ca0938df)
 
 ## additional requirements testing:
+* User cannot create an event without filling out the form
 ![Screenshot 2024-10-29 162726](https://github.com/user-attachments/assets/221a2c26-6352-4199-a995-58af74f7cd3f)
 ![Screenshot 2024-10-29 162920](https://github.com/user-attachments/assets/08a54b9a-58bb-427b-802a-b65f83d68bf6)
 ![Screenshot 2024-10-29 163111](https://github.com/user-attachments/assets/910e974e-13cb-475f-b5ba-c89837938c86)
+* User can only sign up once with one e-mail
+![Screenshot 2024-10-29 204538](https://github.com/user-attachments/assets/b9c42a27-0f71-43d1-bb25-782489103c7f)
+* User must enter right password
 ![Screenshot 2024-10-29 163032](https://github.com/user-attachments/assets/958abfd5-ebaf-463e-9b89-c22c0b3fa29d)
 
 
