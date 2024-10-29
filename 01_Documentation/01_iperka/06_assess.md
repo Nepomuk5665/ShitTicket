@@ -53,7 +53,7 @@
 * User data isolation should be a top priority from the beginning
 
 ### Open Issues
-* 4 major issues still open
+* 5 major issues still open
 * Not enough time to fix all problems
 * Need about 20 more hours to complete everything
 * Security rules need immediate attention
