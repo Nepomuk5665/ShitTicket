@@ -28,10 +28,20 @@ We want to build shitticket.ch because small event organizers have problems with
 * **Code Writing:** VS Code
 * **Planning:** Figma for design, Miro for ideas
 
+## Basic requirements:
+![Screenshot 2024-10-29 094456](https://github.com/user-attachments/assets/b96d1a64-e000-44e0-b168-c90b3bed6b72)
+
+
 ## Project Goals
 * Make website work by **29 October 2024**
 * Get 10 people to sign up in one month
 * Make sure money goes to right people
+
+## Additional Project Goals
+* User must enter password
+* User can only sign up once with one e-mail
+* user cannot create an event without filling out the create form
+* A ticket must cost at least 0.5 francs
 
 ## Main Features to Build
 1. **Create Events:**
