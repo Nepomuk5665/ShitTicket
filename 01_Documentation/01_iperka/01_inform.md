@@ -43,6 +43,13 @@ We want to build shitticket.ch because small event organizers have problems with
 * user cannot create an event without filling out the create form
 * A ticket must cost at least 0.5 francs
 
+![Screenshot 2024-10-29 162726](https://github.com/user-attachments/assets/d8c94a66-3780-485f-931e-517fe341dd24)
+![Screenshot 2024-10-29 162920](https://github.com/user-attachments/assets/73632487-05b7-4e96-9f59-e4f8f442e1ad)
+
+![Screenshot 2024-10-29 163032](https://github.com/user-attachments/assets/1723e027-a376-4842-8cd4-665c96076eda)
+
+
+
 ## Main Features to Build
 1. **Create Events:**
    * Add event name
