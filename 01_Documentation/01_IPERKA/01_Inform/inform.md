@@ -39,7 +39,7 @@ We want to build shitticket.ch because small event organizers have problems with
 ## Project Goals
 * Make website work by **29 October 2024**
 * Get 10 people to sign up in one month
-* Ensure secure payment processing with stripe
+* Ensure secure payment processing with Stripe
 
 ## Main Features to Build
 1. **Create Events:**
