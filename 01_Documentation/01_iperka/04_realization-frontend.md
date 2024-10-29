@@ -1,7 +1,9 @@
 # Frontend: Design of the website [issue #01](https://github.com/Nepomuk5665/ShitTicket/issues/1)
 * Before we could start coding, we had to create a design of what our website should look like. 
 * For this part we used “figma.com”. 
-* We also started there to discuss what we wanted to have on the website and what the users had to enter to sell and buy their tickets. 
+* We also started there to discuss what we wanted to have on the website and what the users had to enter to sell and buy their tickets.
+  ![Screenshot 2024-09-13 205252](https://github.com/user-attachments/assets/75093825-61f4-4486-8846-446c0fd6018b)
+
 
 # Frontend: Creation of the logo [issue #22](https://github.com/Nepomuk5665/ShitTicket/issues/22)
 * This issue is about the logo of our website.
