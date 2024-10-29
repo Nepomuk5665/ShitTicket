@@ -1,11 +1,11 @@
-# How We Plan to Build Shitticket.ch
+# How We Plan to Build ShitTicket.ch
 
 ## Project Idea
-We want to build shitticket.ch because small event organizers have problems with expensive ticket sites. Big sites like Ticketcorner charge too much for small parties and events. Our site will be simple and cheap.
+We want to build shitticket.ch because small event organizers have problems with expensive ticket sites. Big sites like Ticketcorner charge too much for small parties and events. Our site will be simple and affordable.
 
 ## What We Need to Know
 * **Other Ticket Sites:** Look at Ticketcorner and Eventbrite prices
-* **Money:** Figure out how much to charge
+* **Pricing:** Figure out appropriate fee structure
 * **Technical Stuff:** Learn what tools we need
 * **Laws:** Check rules about selling tickets online
 
@@ -15,16 +15,16 @@ We want to build shitticket.ch because small event organizers have problems with
 * Ask friends who organize parties what they need
 * See what problems people have with big ticket sites
 
-### Money Plan
-* Make it cheap - only take 10% of ticket price
+### Pricing Structure
+* Competitive fee - only take 10% of ticket price
 * No hidden costs
-* Use Stripe for safe payments
+* Use Stripe for secure payments
 
 ### Technical Tools We'll Use
 * **Frontend:** HTML, CSS, JavaScript
 * **Backend:** Firebase (it's free and easy)
 * **Payments:** Stripe (works everywhere)
-* **Website:** Hostinger (cheap and good)
+* **Website:** Hostinger (affordable and reliable)
 * **Code Writing:** VS Code
 * **Planning:** Figma for design, Miro for ideas
 
@@ -32,14 +32,14 @@ We want to build shitticket.ch because small event organizers have problems with
 ![Screenshot 2024-10-29 094456](https://github.com/user-attachments/assets/b96d1a64-e000-44e0-b168-c90b3bed6b72)
 
 ## Additional requirements
-* User must enter right password
+* User must enter correct password
 * User can only sign up once with one e-mail
 * User cannot create an event without filling out the form
 
 ## Project Goals
 * Make website work by **29 October 2024**
 * Get 10 people to sign up in one month
-* Make sure money goes to right people
+* Ensure secure payment processing
 
 ## Main Features to Build
 1. **Create Events:**
@@ -47,12 +47,10 @@ We want to build shitticket.ch because small event organizers have problems with
    * Set ticket price
    * Choose max tickets
    * Get share link
-
 2. **Buy Tickets:**
    * Pay with card
    * Get QR code ticket
    * Save ticket info
-
 3. **Check Tickets:**
    * Scan QR codes
    * Show if ticket is real
@@ -61,7 +59,7 @@ We want to build shitticket.ch because small event organizers have problems with
 ## Tools We Need
 * **GitHub:** Save our code
 * **Hostinger:** Put website online
-* **Stripe:** Handle money safely
+* **Stripe:** Handle payments securely
 * **Firebase:** Store ticket data
 * **VS Code:** Write code
 * **Figma:** Design website
@@ -77,8 +75,7 @@ We want to build shitticket.ch because small event organizers have problems with
 
 ## Things to Remember
 * Keep it simple
-* Make sure money is safe
+* Ensure secure payment processing
 * Test everything well
 * Write good documentation
 * Add `tbz-neil-devlin` to GitHub
-
