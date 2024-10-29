@@ -1,7 +1,7 @@
 # ShitTicket
 
 ## Product
-ShitTicket is a streamlined event ticketing platform designed for simplicity and security. Key features include:
+ShitTicket is a event ticketing platform designed for simplicity and security. Key features include:
 
 - **Create Events**: Easily create and customize events with prices and attendee limits
 - **Secure Payments**: Integrated Stripe payment processing
