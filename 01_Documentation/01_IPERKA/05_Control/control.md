@@ -1,6 +1,6 @@
 # Control
 
-## How I Checked & Controlled This Project
+## How we Checked & Controlled This Project
 1. Tested all website features
 2. Verified documentation completeness
 3. Created test protocol
