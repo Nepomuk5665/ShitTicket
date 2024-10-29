@@ -46,3 +46,10 @@ We came up with **shitticket.ch** because selling tickets for small events was e
 **Additional Requirements:**
 * **Repository Management:** We need to create a GitHub repo and invite `tbz-neil-devlin` to it for project submission.
 * **Assignment Deliverables:** By the end of the project, we should have a working site that supports ticket creation, sharing, buying tickets (through Stripe), and managing data (using Firebase), along with full IPERKA documentation.
+
+
+## Links:
+* [Github]
+* [Miro]
+* [w3schools]
+* 
