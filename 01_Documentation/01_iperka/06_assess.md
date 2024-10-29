@@ -13,8 +13,11 @@
 * **Date Validation:** Missing check for past dates
 * **IBAN Payouts:** Still manual process, should be automatic
 * **Code Review:** Should have reviewed code more regularly
+* **Security Rules:** Firebase security rules should have been stricter to prevent unauthorized access to user data
+* **Data Privacy:** Need better isolation between users to ensure data separation
 
 ## Were Goals Achieved?
+
 ### Main Goals
 * ✅ Create working ticket platform
 * ✅ Implement secure payment system
@@ -29,8 +32,10 @@
 * ✅ Mobile responsive design
 * ✅ QR code generation
 * ✅ Basic scanner functionality
+* ❌ Comprehensive security rules
 
 ## Evaluate the Plan
+
 ### Time Management
 * Planned hours: 201
 * Actual hours: 180
@@ -44,15 +49,19 @@
 * Start testing on iOS earlier
 * Add input validation from the start
 * Plan more time for documentation
-* Regular code reviews help catch problems early
+* Security rules should be thoroughly planned and tested
+* User data isolation should be a top priority from the beginning
 
 ### Open Issues
 * 4 major issues still open
 * Not enough time to fix all problems
 * Need about 20 more hours to complete everything
+* Security rules need immediate attention
 
 ## For Next Time
 * Test on all platforms from the start
 * Add proper validation early
 * Plan more buffer time
 * Start documentation earlier
+* Implement strict security rules from the beginning
+* Add comprehensive tests for data access controls
