@@ -24,16 +24,17 @@ All code is available in our [GitHub repository](https://github.com/Nepomuk5665/
 
 ## Documentation
 ### [IPERKA](https://github.com/Nepomuk5665/ShitTicket/tree/main/01_Documentation/01_iperka)
-- [01_inform.md](https://github.com/Nepomuk5665/ShitTicket/blob/main/01_Documentation/01_iperka/01_inform.md)
-- [02_plan.md](https://github.com/Nepomuk5665/ShitTicket/blob/main/01_Documentation/01_iperka/02_plan.md)
-- [03_decide.md](https://github.com/Nepomuk5665/ShitTicket/blob/main/01_Documentation/01_iperka/03_decide.md)
-- [04_realization-backend.md](https://github.com/Nepomuk5665/ShitTicket/blob/main/01_Documentation/01_iperka/04_realization-backend.md)
-- [04_realization-frontend.md](https://github.com/Nepomuk5665/ShitTicket/blob/main/01_Documentation/01_iperka/04_realization-frontend.md)
-- [05_control.md](https://github.com/Nepomuk5665/ShitTicket/blob/main/01_Documentation/01_iperka/05_control.md)
-- [06_evaluation.md](https://github.com/Nepomuk5665/ShitTicket/blob/main/01_Documentation/01_iperka/06_evaluation.md)
+- [Inform](https://github.com/Nepomuk5665/ShitTicket/blob/main/01_Documentation/01_IPERKA/01_Inform/inform.md)
+- [Plan](https://github.com/Nepomuk5665/ShitTicket/blob/main/01_Documentation/01_IPERKA/02_Plan/plan.md)
+- [Decide](https://github.com/Nepomuk5665/ShitTicket/tree/main/01_Documentation/01_IPERKA/03_decide)
+- [Realization backend](https://github.com/Nepomuk5665/ShitTicket/blob/main/01_Documentation/01_IPERKA/04_Realization/03_realization-backend.md)
+- [Realization frontend](https://github.com/Nepomuk5665/ShitTicket/blob/main/01_Documentation/01_IPERKA/04_Realization/02_realization-frontend.md)
+- [Realization design](https://github.com/Nepomuk5665/ShitTicket/blob/main/01_Documentation/01_IPERKA/04_Realization/01_realization-design.md)
+- [Control](https://github.com/Nepomuk5665/ShitTicket/blob/main/01_Documentation/01_IPERKA/05_Control/control.md)
+- [Evaluation](https://github.com/Nepomuk5665/ShitTicket/blob/main/01_Documentation/01_IPERKA/06_assess/assess.md)
 
 ## Download & Access
-- 🌐 **Live Website**: [https://shitticket.ch](https://shitticket.ch)
+- 🌐 **Live Website**: [shitticket.ch](https://shitticket.ch)
 - 💻 **Source Code**: [GitHub Repository](https://github.com/Nepomuk5665/ShitTicket/tree/main/02_Code)
 
   
