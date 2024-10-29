@@ -45,14 +45,15 @@ Firebase success log:
 All documentation sections completed and verified:
 | Document | Status |
 |----------|---------|
-| Inform | ✅ Passed |
-| Plan | ✅ Passed |
-| Decide | ✅ Passed |
-| Frontend Realization | ✅ Passed |
-| Backend Realization | ✅ Passed |
-| Control | ✅ Passed |
-| Evaluation | ✅ Passed |
-| Security Documentation | ✅ Passed |
+| [Inform](https://github.com/Nepomuk5665/ShitTicket/blob/main/01_Documentation/01_IPERKA/01_Inform/inform.md) | ✅ Passed |
+| [Plan](https://github.com/Nepomuk5665/ShitTicket/blob/main/01_Documentation/01_IPERKA/02_Plan/plan.md) | ✅ Passed |
+| [Decide](https://github.com/Nepomuk5665/ShitTicket/blob/main/01_Documentation/01_IPERKA/03_decide/decide.md) | ✅ Passed |
+| [Frontend Realization](https://github.com/Nepomuk5665/ShitTicket/blob/main/01_Documentation/01_IPERKA/04_Realization/02_realization-frontend.md) | ✅ Passed |
+| [Backend Realization](https://github.com/Nepomuk5665/ShitTicket/blob/main/01_Documentation/01_IPERKA/04_Realization/03_realization-backend.md) | ✅ Passed |
+| [Design Realization](https://github.com/Nepomuk5665/ShitTicket/blob/main/01_Documentation/01_IPERKA/04_Realization/01_realization-design.md) | ✅ Passed |
+| [Control](https://github.com/Nepomuk5665/ShitTicket/blob/main/01_Documentation/01_IPERKA/05_Control/control.md) | ✅ Passed |
+| [Evaluation](https://github.com/Nepomuk5665/ShitTicket/blob/main/01_Documentation/01_IPERKA/06_assess/assess.md) | ✅ Passed |
+| [Security Documentation](https://github.com/Nepomuk5665/ShitTicket/blob/main/01_Documentation/01_IPERKA/07_security/security.md) | ✅ Passed |
 
 ## Created Issues for Failed Tests
 Due to time constraints, these issues remain open for future development:
