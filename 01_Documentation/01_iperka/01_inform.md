@@ -1,56 +1,84 @@
-# How We Gathered Information for Shitticket.ch
+# How We Plan to Build Shitticket.ch
 
-## Concept Origin
-We came up with **shitticket.ch** because selling tickets for small events was expensive and complicated. We wanted to make it easier and cheaper, especially for things like parties and niche events. We called it "shitticket" because it's funny and easy to remember.
+## Project Idea
+We want to build shitticket.ch because small event organizers have problems with expensive ticket sites. Big sites like Ticketcorner charge too much for small parties and events. Our site will be simple and cheap.
 
-## Information Needs
-* **Competitors:** We had to know what other platforms like Ticketcorner and Eventbrite are doing and what fees they charge.
-* **Business Model:** We needed a way to make money but still keep it cheap for users.
-* **Niche Market:** We looked for opportunities that big platforms might ignore.
-* **Technical Requirements:** We had to figure out what tools we needed to build the site and manage tickets.
+## What We Need to Know
+* **Other Ticket Sites:** Look at Ticketcorner and Eventbrite prices
+* **Money:** Figure out how much to charge
+* **Technical Stuff:** Learn what tools we need
+* **Laws:** Check rules about selling tickets online
 
-## Information Gathering Techniques
-### Market Research
-* We checked out big ticket platforms like Ticketcorner, Eventbrite, and Ticketmaster to see what they focus on and how much they charge. We found a gap in the market for cheaper, smaller ticketing solutions.
-* We talked to event organizers, who told us they need a simple and affordable way to sell tickets, which confirmed our idea.
+## How We'll Get Information
+### Looking at Other Sites
+* Check prices on Ticketcorner and Eventbrite
+* Ask friends who organize parties what they need
+* See what problems people have with big ticket sites
 
-### Business Model Exploration
-* We studied how other platforms make money and decided to go with a clear fee model—taking 10% of each ticket sold, with no hidden fees.
-* We’re focusing on small, local events and parties to stay away from competing with the big companies.
+### Money Plan
+* Make it cheap - only take 10% of ticket price
+* No hidden costs
+* Use Stripe for safe payments
 
-### Technical Planning
-* We picked **Stripe** for payment processing because it’s easy to integrate, has low fees, and works worldwide.
-* We chose **Hostinger** for hosting and domains, and for development and backend, we’re using **VS Code** and **Firebase**.
-
-## Information Collected
-* **Competitors:** Big platforms charge a lot for big events, so there's room for something smaller and cheaper.
-* **Business Model:** We’ll take 10% of ticket sales and keep it simple for users.
-* **Tools:** We chose Hostinger, Stripe, and Firebase as our main tools.
+### Technical Tools We'll Use
+* **Frontend:** HTML, CSS, JavaScript
+* **Backend:** Firebase (it's free and easy)
+* **Payments:** Stripe (works everywhere)
+* **Website:** Hostinger (cheap and good)
+* **Code Writing:** VS Code
+* **Planning:** Figma for design, Miro for ideas
 
 ## Project Goals
-* **Website Development:** We’ll have a working platform by **29 October 2024** that lets users create and share tickets.
-* **Website sales:** We'll have at least 10 users on our website.  
-* **Market Validation:** We’ll launch with a few small events to test if people like it.
+* Make website work by **29 October 2024**
+* Get 10 people to use it
+* Handle at least 5 events successfully
+* Make sure money goes to right people
 
-## Tools for Project Execution
-* **GitHub:** We’re using it for version control and collaboration.
-* **Hostinger:** For hosting and buying the domain. It also provides a “home” for your website files on the internet so anyone can visit your site.
-* **Stripe:** For easy payment processing. A middleman that securely moves money from a customer’s bank account or credit card to a business’s account when someone buys something online.
-* **VS Code:** For coding the site.
-* **Firebase:** To manage the database and backend.
-* **Figma:** A website where you can design your website with others in real time.
-* **Miro** An online whiteboard tool for team collaboration. To create, share, and brainstorm ideas on a digital canvas with others, using sticky notes, diagrams, and drawings.
+## Main Features to Build
+1. **Create Events:**
+   * Add event name
+   * Set ticket price
+   * Choose max tickets
+   * Get share link
 
----
+2. **Buy Tickets:**
+   * Pay with card
+   * Get QR code ticket
+   * Save ticket info
 
-**Additional Requirements:**
-* **Repository Management:** We need to create a GitHub repo and invite `tbz-neil-devlin` to it for project submission.
-* **Assignment Deliverables:** By the end of the project, we should have a working site that supports ticket creation, sharing, buying tickets (through Stripe), and managing data (using Firebase), along with full IPERKA documentation.
+3. **Check Tickets:**
+   * Scan QR codes
+   * Show if ticket is real
+   * Mark tickets as used
 
+## Tools We Need
+* **GitHub:** Save our code
+* **Hostinger:** Put website online
+* **Stripe:** Handle money safely
+* **Firebase:** Store ticket data
+* **VS Code:** Write code
+* **Figma:** Design website
+* **Miro:** Plan features
 
-## Links:
-* [GitHub]
-* [Miro]
-* [Figma]
-* [w3schools]
-* 
+## Important Links
+* [GitHub Repository](https://github.com/Nepomuk5665/ShitTicket)
+* [Firebase Console](https://console.firebase.google.com/)
+* [Stripe Dashboard](https://dashboard.stripe.com/)
+* [MDN Web Docs](https://developer.mozilla.org/)
+* [W3Schools](https://www.w3schools.com/)
+
+## Things to Remember
+* Keep it simple
+* Make sure money is safe
+* Test everything well
+* Write good documentation
+* Add `tbz-neil-devlin` to GitHub
+
+## Timeline
+1. Week 1: Design website
+2. Week 2: Build basic pages
+3. Week 3: Add Stripe payments
+4. Week 4: Create QR system
+5. Week 5: Test everything
+6. Week 6: Fix problems
+7. Week 7: Launch website
