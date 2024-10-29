@@ -42,6 +42,7 @@ Due to time constraints, these issues remain open for future development:
 
 ### [Issue #36](https://github.com/Nepomuk5665/ShitTicket/issues/36): Minimum Price Check
 **Title:** "Add minimum price validation for ticket creation"
+
 **Description:** "Currently, the system allows creation of tickets less than 0.5 CHF, which Stripe cannot process. Need to add frontend and backend validation to prevent tickets under 0.5 CHF from being created."
 - Priority: High
 - Status: Open
@@ -49,6 +50,7 @@ Due to time constraints, these issues remain open for future development:
 
 ### [Issue #37](https://github.com/Nepomuk5665/ShitTicket/issues/37): Past Date Validation
 **Title:** "Prevent creation of events in the past"
+
 **Description:** "System currently allows events to be created with past dates. Need to add date validation on both frontend and backend to ensure only future dates can be selected."
 - Priority: Medium
 - Status: Open
@@ -56,6 +58,7 @@ Due to time constraints, these issues remain open for future development:
 
 ### [Issue #38](https://github.com/Nepomuk5665/ShitTicket/issues/38): iOS Scanner Compatibility
 **Title:** "Fix QR scanner compatibility on iOS devices"
+
 **Description:** "Scanner doesn't work properly on iOS due to security restrictions. Need to implement alternative camera handling for iOS devices and test on multiple iOS versions."
 - Priority: High
 - Status: Open
@@ -63,6 +66,7 @@ Due to time constraints, these issues remain open for future development:
 
 ### [Issue #39](https://github.com/Nepomuk5665/ShitTicket/issues/39): Automate IBAN Payouts
 **Title:** "Implement automatic IBAN payouts"
+
 **Description:** "Currently payouts to event creators are handled manually. Need to implement automatic payout system using Stripe Connect or similar service to handle automated IBAN transfers."
 - Priority: Medium
 - Status: Open
@@ -70,6 +74,7 @@ Due to time constraints, these issues remain open for future development:
 
 ### [Issue #40](https://github.com/Nepomuk5665/ShitTicket/issues/40): Enhance Security Rules
 **Title:** "Implement stricter Firebase security rules"
+
 **Description:** "Current security rules allow potential access to other users' data. Need to implement better security rules to ensure proper data isolation."
 - Priority: Critical
 - Status: Open
