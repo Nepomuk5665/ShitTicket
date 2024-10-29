@@ -24,7 +24,7 @@ service cloud.firestore {
   }
 }
 ```
-ss
+<img width="1728" alt="image" src="https://github.com/user-attachments/assets/7265eb0d-26fb-4587-8813-004e5250ca27">
 
 ## Known Security Risks
 1. User Data Exposure:
@@ -47,7 +47,8 @@ await setDoc(doc(db, "users", user.uid), {
     createdAt: new Date().toISOString()
 });
 ```
-ss registration form
+<img width="911" alt="image" src="https://github.com/user-attachments/assets/c86f60e2-7d58-4176-9f6c-e59caa51ec8d">
+
 
 ## Input Validation Issues
 1. Missing Password Rules:
@@ -78,7 +79,8 @@ ss registration form
    - Using Stripe's hosted checkout page
    - Never handling credit card data ourselves
    - All payments processed through Stripe
-ss stripe checkout flow
+<img width="1204" alt="image" src="https://github.com/user-attachments/assets/da271143-7dd6-4ece-b346-5d04ade6858c">
+
 
 ## QR Code Security
 1. Ticket Validation:
@@ -111,4 +113,3 @@ await updateDoc(doc(db, "purchased_tickets", ticketId), {
    - Ticket prices
 2. Restrict user data access
 3. Implement iOS compatible scanner
-4. Add payment verification checks
