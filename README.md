@@ -34,6 +34,6 @@ All code is available in our [GitHub repository](https://github.com/Nepomuk5665/
 
 ## Download & Access
 - 🌐 **Live Website**: [https://shitticket.ch](https://shitticket.ch)
-- 💻 **Source Code**: [GitHub Repository](https://github.com/Nepomuk5665/ShitTicket)
+- 💻 **Source Code**: [GitHub Repository](https://github.com/Nepomuk5665/ShitTicket/tree/main/02_Code)
 
   
