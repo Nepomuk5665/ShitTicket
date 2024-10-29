@@ -320,3 +320,55 @@ import { getFirestore } from "firebase/firestore";
 - [Firebase Setup](https://firebase.google.com/docs/web/setup)
 - [Module Import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
 
+# Firebase Authentication Implementation [issue #41](https://github.com/Nepomuk5665/ShitTicket/issues/41)
+
+## Implementation
+1. Created registration form:
+```html
+<form id="signupForm">
+    <input type="text" id="firstName" placeholder="First name" required>
+    <input type="text" id="surname" placeholder="Surname" required>
+    <input type="email" id="email" placeholder="Email" required>
+    <input type="password" id="password" placeholder="Password" required>
+    <input type="text" id="iban" placeholder="IBAN" required>
+</form>
+```
+<img width="649" alt="Screenshot 2024-10-29 at 8 06 15 PM" src="https://github.com/user-attachments/assets/7182feca-4178-4d39-8058-351263a98b6c">
+
+
+2. Registration code:
+```javascript
+import { createUserWithEmailAndPassword } from './firebase-init.js';
+
+await createUserWithEmailAndPassword(auth, email, password);
+await setDoc(doc(db, "users", user.uid), {
+    firstName: firstName,
+    surname: surname,
+    email: email,
+    iban: iban,
+    createdAt: new Date().toISOString()
+});
+```
+Based on: [Firebase Auth Guide](https://firebase.google.com/docs/auth/web/start)
+
+3. Login code:
+```javascript
+import { signInWithEmailAndPassword } from './firebase-init.js';
+
+const userCredential = await signInWithEmailAndPassword(auth, email, password);
+const user = userCredential.user;
+```
+
+
+## Problems & Solutions
+1. Session Management:
+   - Problem: Lost login after refresh
+   - Fixed with: Firebase persistence
+   - Source: [Auth States](https://firebase.google.com/docs/auth/web/auth-state-persistence)
+
+
+## Code Sources
+- [Firebase Auth](https://firebase.google.com/docs/auth)
+- [Password Authentication](https://firebase.google.com/docs/auth/web/password-auth)
+- [User Management](https://firebase.google.com/docs/auth/web/manage-users)
+
