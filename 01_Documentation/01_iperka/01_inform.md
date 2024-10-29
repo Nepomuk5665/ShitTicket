@@ -68,13 +68,14 @@ We want to build shitticket.ch because small event organizers have problems with
 * **VS Code:** Write code
 * **Figma:** Design website
 * **Miro:** Plan features
+* **w3schools:** Tutorials about HTML CSS 
 
 ## Important Links
 * [GitHub Repository](https://github.com/Nepomuk5665/ShitTicket)
 * [Firebase Console](https://console.firebase.google.com/)
 * [Stripe Dashboard](https://dashboard.stripe.com/)
 * [MDN Web Docs](https://developer.mozilla.org/)
-* [W3Schools](https://www.w3schools.com/)
+* [W3schools](https://www.w3schools.com/)
 
 ## Things to Remember
 * Keep it simple
