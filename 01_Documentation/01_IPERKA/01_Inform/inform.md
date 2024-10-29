@@ -82,11 +82,3 @@ We want to build shitticket.ch because small event organizers have problems with
 * Write good documentation
 * Add `tbz-neil-devlin` to GitHub
 
-## Timeline
-1. Week 1: Design website
-2. Week 2: Build basic pages
-3. Week 3: Add Stripe payments
-4. Week 4: Create QR system
-5. Week 5: Test everything
-6. Week 6: Fix problems
-7. Week 7: Launch website
